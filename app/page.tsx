@@ -1,18 +1,25 @@
 'use client';
 import Header from '@/components/header';
 import Container from '@/components/container';
-import Hero from '@/components/hero';
+
 import AboutUs from '@/components/aboutus';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import OpenHours from '@/components/openhours';
 import Payment from '@/components/payment';
 import Image from 'next/image';
+import { useState } from 'react';
+import Prices from '@/components/prices';
 export default function Home() {
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const updateHeaderHeight = (newHeight: number) => {
+    setHeaderHeight(newHeight);
+  };
+
   return (
     <main className="main">
-      <Header />
-      <Container>
+      <Header updateHeaderHeight={updateHeaderHeight} />
+      <Container headerHeight={headerHeight}>
         <Image
           src="/hero.jpg"
           fill={true}
@@ -20,11 +27,13 @@ export default function Home() {
           priority
         />
       </Container>
-      <AboutUs />
+      <AboutUs headerHeight={headerHeight} />
+      <Prices />
       <OpenHours />
       <Payment />
       <Contact />
       <Footer />
+
       {/* <Hero /> */}
       {/* </Container> */}
     </main>

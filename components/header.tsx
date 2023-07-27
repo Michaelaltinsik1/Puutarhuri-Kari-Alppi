@@ -3,8 +3,13 @@ import Image from 'next/image';
 import { Title } from '@/styles/styles';
 import { styled } from 'styled-components';
 import { devices } from '@/utils/devices';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { NavLink } from '@/styles/styles';
+
+interface HeaderProps {
+  updateHeaderHeight: (newvalue: number) => void;
+}
+
 const HeaderStyled = styled.header`
   position: sticky;
   top: 0;
@@ -22,29 +27,6 @@ const HeaderStyled = styled.header`
     padding: 24px 48px;
   }
 `;
-
-// const MenuToggleButton = styled(Image)<{ isLeftAligned?: boolean }>`
-//   display: flex;
-//   ${(props) =>
-//     props.isLeftAligned && {
-//       padding: '20px 16px',
-//       alignSelf: 'end',
-//       marginBottom: '20px',
-//     }}
-//   @media (min-width: ${devices.laptop}) {
-//     ${(props) =>
-//       props.isLeftAligned && {
-//         padding: '56px 16px',
-//         marginBottom: '32px',
-//       }}
-//   }
-//   @media (min-width: ${devices.tablet}) {
-//     margin-left: auto;
-//   }
-//   @media (min-width: ${devices.desktop}) {
-//     display: none;
-//   }
-// `;
 
 const MenuToggleButton = styled(Image)<{ $isLeftAligned?: boolean }>`
   display: flex;
@@ -110,17 +92,24 @@ const ListItem = styled.li`
     width: auto;
   }
 `;
-const Header = () => {
+const Header = ({ updateHeaderHeight }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  //const [height, setHeight] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
   const closeMenu = () => {
     setIsOpen(false);
   };
   const openMenu = () => {
     setIsOpen(true);
   };
-
+  useEffect(() => {
+    if (ref.current) {
+      // setHeight(ref.current?.clientHeight);
+      updateHeaderHeight(ref.current?.clientHeight);
+    }
+  });
   return (
-    <HeaderStyled>
+    <HeaderStyled ref={ref}>
       <picture>
         <source media="(min-width: 1201px)" srcSet="/Logo.png" />
         <source media="(max-width: 1200px)" srcSet="/LogoMobile.png" />
@@ -165,7 +154,7 @@ const Header = () => {
             </NavLink>
           </ListItem>
           <ListItem>
-            <NavLink onClick={closeMenu} href="#">
+            <NavLink onClick={closeMenu} href="#prices">
               Vårt utbud
             </NavLink>
           </ListItem>

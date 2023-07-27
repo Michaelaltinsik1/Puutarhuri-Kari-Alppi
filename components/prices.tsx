@@ -1,13 +1,12 @@
 import { styled } from 'styled-components';
 import { colors } from '@/utils/colors';
 const DivStyled = styled.div`
-  background-color: ${colors.gray_50};
-
+  background-color: ${colors.green};
   height: 100vh;
 `;
 
-const Footer = () => {
-  return <DivStyled id="footer"></DivStyled>;
+const Prices = () => {
+  return <DivStyled id="prices"></DivStyled>;
 };
 
-export default Footer;
+export default Prices;

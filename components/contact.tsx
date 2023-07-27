@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
-
+import { colors } from '@/utils/colors';
 const DivStyled = styled.div`
-  background-color: black;
+  background-color: ${colors.khabi};
   height: 100vh;
 `;
 
