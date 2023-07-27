@@ -6,6 +6,9 @@ import { devices } from '@/utils/devices';
 import { useState } from 'react';
 import { NavLink } from '@/styles/styles';
 const HeaderStyled = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 100000;
   display: flex;
   background-color: ${colors.green};
   padding: 20px 16px;
@@ -20,17 +23,40 @@ const HeaderStyled = styled.header`
   }
 `;
 
-const MenuToggleButton = styled(Image)<{ isLeftAligned?: boolean }>`
+// const MenuToggleButton = styled(Image)<{ isLeftAligned?: boolean }>`
+//   display: flex;
+//   ${(props) =>
+//     props.isLeftAligned && {
+//       padding: '20px 16px',
+//       alignSelf: 'end',
+//       marginBottom: '20px',
+//     }}
+//   @media (min-width: ${devices.laptop}) {
+//     ${(props) =>
+//       props.isLeftAligned && {
+//         padding: '56px 16px',
+//         marginBottom: '32px',
+//       }}
+//   }
+//   @media (min-width: ${devices.tablet}) {
+//     margin-left: auto;
+//   }
+//   @media (min-width: ${devices.desktop}) {
+//     display: none;
+//   }
+// `;
+
+const MenuToggleButton = styled(Image)<{ $isLeftAligned?: boolean }>`
   display: flex;
   ${(props) =>
-    props.isLeftAligned && {
+    props.$isLeftAligned && {
       padding: '20px 16px',
       alignSelf: 'end',
       marginBottom: '20px',
     }}
   @media (min-width: ${devices.laptop}) {
     ${(props) =>
-      props.isLeftAligned && {
+      props.$isLeftAligned && {
         padding: '56px 16px',
         marginBottom: '32px',
       }}
@@ -43,13 +69,13 @@ const MenuToggleButton = styled(Image)<{ isLeftAligned?: boolean }>`
   }
 `;
 
-const Nav = styled.nav<{ isOpen?: boolean }>`
+const Nav = styled.nav<{ $isOpen?: boolean }>`
   background-color: ${colors.green};
   height: 100vh;
   width: 100vw;
   flex-direction: column;
   ${(props) =>
-    props.isOpen
+    props?.$isOpen
       ? {
           display: 'flex',
           position: 'absolute',
@@ -67,7 +93,7 @@ const Nav = styled.nav<{ isOpen?: boolean }>`
     height: fit-content;
   }
 `;
-const NavContainer = styled.ul<{ isOpen?: boolean }>`
+const NavContainer = styled.ul`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -86,13 +112,13 @@ const ListItem = styled.li`
 `;
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const closeMenu = () => {
     setIsOpen(false);
   };
   const openMenu = () => {
     setIsOpen(true);
   };
+
   return (
     <HeaderStyled>
       <picture>
@@ -118,33 +144,45 @@ const Header = () => {
           height={80}
         />
       )}
-      <Nav isOpen={isOpen}>
+      <Nav $isOpen={isOpen}>
         <MenuToggleButton
-          isLeftAligned={true}
+          $isLeftAligned={true}
           onClick={closeMenu}
           src="/Close.svg"
           alt="Close menu icon"
           width={80}
           height={80}
         />
-        <NavContainer isOpen={isOpen}>
+        <NavContainer>
           <ListItem>
-            <NavLink href="#">Hem</NavLink>
+            <NavLink onClick={closeMenu} href="#">
+              Hem
+            </NavLink>
           </ListItem>
           <ListItem>
-            <NavLink href="#">Om oss</NavLink>
+            <NavLink onClick={closeMenu} href="#aboutUs">
+              Om oss
+            </NavLink>
           </ListItem>
           <ListItem>
-            <NavLink href="#">Vårt utbud</NavLink>
+            <NavLink onClick={closeMenu} href="#">
+              Vårt utbud
+            </NavLink>
           </ListItem>
           <ListItem>
-            <NavLink href="#">Öppettider</NavLink>
+            <NavLink onClick={closeMenu} href="#openHours">
+              Öppettider
+            </NavLink>
           </ListItem>
           <ListItem>
-            <NavLink href="#">Beställ</NavLink>
+            <NavLink onClick={closeMenu} href="#payment">
+              Beställ
+            </NavLink>
           </ListItem>
           <ListItem>
-            <NavLink href="#">Kontakt</NavLink>
+            <NavLink onClick={closeMenu} href="#contact">
+              Kontakt
+            </NavLink>
           </ListItem>
         </NavContainer>
       </Nav>

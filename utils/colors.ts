@@ -3,8 +3,8 @@ export enum colors {
   gray_600 = '#757575',
   gray_800 = '#424242',
   gray_900 = '#212121',
-  orange = '#ffa726',
   red = '#E53935',
-  blue = '#89C4E1',
+  darkRed = '#6E0707',
   green = '#C1E1C1',
+  khabi = '#BBAE8B',
 }
