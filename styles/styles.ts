@@ -28,6 +28,7 @@ export const SecondaryHeading = styled.h2`
   @media (min-width: ${devices.desktop}) {
     font-size: 48px;
     letter-spacing: -1px;
+    margin-bottom: 40px;
   }
 `;
 export const Body = styled.p`
