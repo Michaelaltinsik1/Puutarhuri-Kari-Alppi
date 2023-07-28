@@ -28,14 +28,11 @@ export default function Home() {
         />
       </Container>
       <AboutUs headerHeight={headerHeight} />
-      <Prices />
-      <OpenHours />
-      <Payment />
-      <Contact />
-      <Footer />
-
-      {/* <Hero /> */}
-      {/* </Container> */}
+      <Prices headerHeight={headerHeight} />
+      <OpenHours headerHeight={headerHeight} />
+      <Payment headerHeight={headerHeight} />
+      <Contact headerHeight={headerHeight} />
+      <Footer headerHeight={headerHeight} />
     </main>
   );
 }

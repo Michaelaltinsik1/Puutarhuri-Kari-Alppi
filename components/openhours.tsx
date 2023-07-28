@@ -5,7 +5,14 @@ import openHours from '@/utils/openHours.json';
 import deviantHours from '@/utils/deviantHours.json';
 import { devices } from '@/utils/devices';
 import React from 'react';
-const DivStyled = styled.div`
+
+interface OpenHoursProps {
+  headerHeight: number;
+}
+
+const DivStyled = styled.div<{ $headerHeight?: number }>`
+  scroll-margin-top: ${(props) =>
+    props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
   background-color: ${colors.gray_50};
   padding: 24px 16px;
   @media (min-width: ${devices.desktop}) {
@@ -42,9 +49,9 @@ const Span = styled.span`
   margin-left: 4px;
   margin-right: 4px;
 `;
-const OpenHours = () => {
+const OpenHours = ({ headerHeight }: OpenHoursProps) => {
   return (
-    <DivStyled id="openHours">
+    <DivStyled $headerHeight={headerHeight - 1} id="openHours">
       <Wrapper>
         <div>
           <SecondaryHeading>Öppettider</SecondaryHeading>

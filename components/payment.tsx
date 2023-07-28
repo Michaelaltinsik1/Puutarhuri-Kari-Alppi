@@ -4,7 +4,13 @@ import { SecondaryHeading } from '@/styles/styles';
 import { Body } from '@/styles/styles';
 import Image from 'next/image';
 import { devices } from '@/utils/devices';
-const Wrapper = styled.div`
+
+interface PaymentProps {
+  headerHeight: number;
+}
+const Wrapper = styled.div<{ $headerHeight?: number }>`
+  scroll-margin-top: ${(props) =>
+    props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
   background-color: ${colors.green};
   padding: 24px 16px;
   display: flex;
@@ -37,9 +43,9 @@ const MainContainer = styled.div`
     max-width: 50%;
   }
 `;
-const Payment = () => {
+const Payment = ({ headerHeight }: PaymentProps) => {
   return (
-    <Wrapper id="payment">
+    <Wrapper $headerHeight={headerHeight - 1} id="payment">
       <MainContainer>
         <SecondaryHeading>
           Payments, Lorem, ipsum dolor sit amet consectetur.
