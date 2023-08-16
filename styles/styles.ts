@@ -8,14 +8,21 @@ export const Title = styled.h1`
   color: ${colors.gray_900};
   font-size: 64px;
   line-height: 130%;
+  font-family: var(--font-roboto);
+
   letter-spacing: -1px;
+
   @media (min-width: ${devices.tablet}) {
     display: block;
+  }
+  @media (max-width: ${devices.desktopHeaderEdgeCase}) {
+    font-size: 48px;
   }
   @media (min-width: ${devices.desktop}) {
     display: block;
     margin-right: 40px;
   }
+
   margin: auto 0px;
 `;
 
@@ -30,6 +37,9 @@ export const SecondaryHeading = styled.h2`
     letter-spacing: -1px;
     margin-bottom: 40px;
   }
+  @media (max-width: ${devices.desktopHeaderEdgeCase}) {
+    font-size: 40px;
+  }
 `;
 export const Body = styled.p`
   color: ${colors.gray_900};
@@ -37,6 +47,32 @@ export const Body = styled.p`
   line-height: 150%;
   letter-spacing: 0px;
   margin-bottom: 16px;
+`;
+
+export const FooterLink = styled(Link)`
+  font-size: 24px;
+  line-height: 150%;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  color: ${colors.gray_900};
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  &:hover {
+    text-decoration: none;
+  }
+  padding-top: 8px;
+  padding-bottom: 8px;
+  @media (min-width: ${devices.tablet}) {
+    text-align: start;
+  }
+`;
+export const CopyRight = styled.p`
+  font-size: 24px;
+  line-height: 150%;
+  color: ${colors.gray_900};
+  text-align: center;
+  margin-top: 40px;
 `;
 export const NavLink = styled(Link)`
   box-sizing: border-box;
@@ -54,8 +90,16 @@ export const NavLink = styled(Link)`
     text-decoration: underline;
     text-underline-offset: 8px;
   }
+
   @media (min-width: ${devices.desktop}) {
     font-size: 40px;
+    line-height: 140%;
+    letter-spacing: -1px;
+    padding: 32px 24px;
+    display: inline;
+  }
+  @media (max-width: ${devices.desktopHeaderEdgeCase}) {
+    font-size: 32px;
     line-height: 140%;
     letter-spacing: -1px;
     padding: 32px 24px;

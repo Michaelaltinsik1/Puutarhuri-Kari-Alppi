@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Title } from '@/styles/styles';
 import { styled } from 'styled-components';
 import { devices } from '@/utils/devices';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { NavLink } from '@/styles/styles';
 
 interface HeaderProps {
@@ -11,6 +11,7 @@ interface HeaderProps {
 }
 
 const HeaderStyled = styled.header`
+  box-sizing: border-box;
   position: sticky;
   top: 0;
   z-index: 100000;
@@ -94,7 +95,6 @@ const ListItem = styled.li`
 `;
 const Header = ({ updateHeaderHeight }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  //const [height, setHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const closeMenu = () => {
     setIsOpen(false);
@@ -102,9 +102,8 @@ const Header = ({ updateHeaderHeight }: HeaderProps) => {
   const openMenu = () => {
     setIsOpen(true);
   };
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (ref.current) {
-      // setHeight(ref.current?.clientHeight);
       updateHeaderHeight(ref.current?.clientHeight);
     }
   });

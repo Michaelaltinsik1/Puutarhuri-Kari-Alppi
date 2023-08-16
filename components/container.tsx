@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
 import { styled } from 'styled-components';
-
+import Image from 'next/image';
 interface ContainerTypes {
-  children: ReactNode;
   headerHeight: number;
 }
 
@@ -11,11 +10,18 @@ const ContainerStyled = styled.div<{ $headerHeight?: number }>`
   ${(props) =>
     props.$headerHeight && {
       height: `calc(100vh - ${props.$headerHeight}px)`,
-    }}//height: calc(100% - $headerHeight);
+    }}//height: 80vh;
 `;
-const Container = ({ children, headerHeight }: ContainerTypes) => {
+const Container = ({ headerHeight }: ContainerTypes) => {
   return (
-    <ContainerStyled $headerHeight={headerHeight}>{children}</ContainerStyled>
+    <ContainerStyled $headerHeight={headerHeight}>
+      <Image
+        src="/hero.jpg"
+        fill={true}
+        alt="Hero image with farm and a lake in the background with blue berries and asparagus"
+        priority
+      />
+    </ContainerStyled>
   );
 };
 export default Container;

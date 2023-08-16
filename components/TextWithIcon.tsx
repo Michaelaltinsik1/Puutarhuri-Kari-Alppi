@@ -15,12 +15,13 @@ interface TextWithIconProps {
   text: string;
   icon: Icons;
 }
-
+const Container = styled.div`
+  min-width: 30px;
+`;
 const TextWithIconStyled = styled.a<{ $isLocation?: boolean }>`
   display: flex;
-  font-size: 20px;
+  font-size: 24px;
   color: ${colors.gray_900};
-  font-weight: 600;
   align-items: center;
   text-decoration: none;
   &:hover {
@@ -35,7 +36,13 @@ const TextWithIcon = ({ text, icon }: TextWithIconProps) => {
     if (icon === Icons.phone) {
       return (
         <TextWithIconStyled href={`tel:${text}`}>
-          <Image src={Phone} alt="Phone icon" />
+          <Container>
+            <Image
+              src={Phone}
+              alt="Phone icon"
+              style={{ width: '20px', height: 'auto', marginTop: '2px' }}
+            />
+          </Container>
           <span style={{ marginRight: '8px' }}></span>
           {text}
         </TextWithIconStyled>
@@ -43,7 +50,13 @@ const TextWithIcon = ({ text, icon }: TextWithIconProps) => {
     } else if (icon === Icons.email) {
       return (
         <TextWithIconStyled href="mailto:Mickealt@hotmail.se">
-          <Image src={Email} alt="Email icon" />
+          <Container>
+            <Image
+              src={Email}
+              alt="Email icon"
+              style={{ width: '20px', height: 'auto', marginTop: '6px' }}
+            />
+          </Container>
           <span style={{ marginRight: '8px' }}></span>
           {text}
         </TextWithIconStyled>
@@ -51,7 +64,13 @@ const TextWithIcon = ({ text, icon }: TextWithIconProps) => {
     } else {
       return (
         <TextWithIconStyled $isLocation={true}>
-          <Image src={Location} alt="Location icon" />{' '}
+          <Container>
+            <Image
+              src={Location}
+              alt="Location icon"
+              style={{ width: '20px', height: 'auto' }}
+            />{' '}
+          </Container>
           <span style={{ marginRight: '8px' }}></span> {text}
         </TextWithIconStyled>
       );
