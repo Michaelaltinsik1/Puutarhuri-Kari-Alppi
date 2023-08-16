@@ -41,6 +41,22 @@ export const SecondaryHeading = styled.h2`
     font-size: 40px;
   }
 `;
+
+export const Subheading = styled.p`
+  color: ${colors.gray_900};
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  margin-bottom: 20px;
+  @media (min-width: ${devices.desktop}) {
+    font-size: 24px;
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: ${devices.desktopHeaderEdgeCase}) {
+    font-size: 24px;
+  }
+`;
 export const Body = styled.p`
   color: ${colors.gray_900};
   font-size: 16px;

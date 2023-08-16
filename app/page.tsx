@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Prices from '@/components/prices';
 import styled from 'styled-components';
+import Recipes from '@/components/recipes';
 import Hero from '../public/hero.jpg';
 export default function Home() {
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -41,6 +42,7 @@ export default function Home() {
       {/* <Container headerHeight={headerHeight} /> */}
       <AboutUs headerHeight={headerHeight} />
       <Prices headerHeight={headerHeight} />
+      <Recipes headerHeight={headerHeight} />
       <OpenHours headerHeight={headerHeight} />
       <Payment headerHeight={headerHeight} />
       <Contact headerHeight={headerHeight} />

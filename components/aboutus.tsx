@@ -9,7 +9,7 @@ interface AboutUsProps {
 // scroll-margin-top: 214px;
 //{props => props.$inputColor || "#BF4F74"};
 const Wrapper = styled.div<{ $headerHeight?: number }>`
-  background-color: ${colors.gray_50};
+  background-color: ${colors.green};
   padding: 24px 16px;
   scroll-margin-top: ${(props) =>
     props.$headerHeight ? `${props.$headerHeight}px` : '0px'};

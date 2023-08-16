@@ -1,0 +1,26 @@
+[
+  {
+     "name":"manssikka",
+     "price":15
+  },
+  {
+     "name":"mustikka",
+     "price":10
+  },
+  {
+     "name":"omena",
+     "price":12
+  },
+  {
+     "name":"parsa",
+     "price":20
+  },
+  {
+     "name":"vesimeloni",
+     "price":16
+  },
+  {
+     "name":"herukka",
+     "price":8
+  }
+]
