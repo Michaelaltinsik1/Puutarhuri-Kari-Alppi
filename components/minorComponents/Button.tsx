@@ -10,6 +10,7 @@ interface ButtonProps {
   children: ReactNode;
   btnType: ButtonType;
   type: 'button' | 'submit' | 'reset';
+  isSubmitting?: boolean;
 }
 
 const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
@@ -42,9 +43,9 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
   }
 `;
 
-const Button = ({ children, btnType, type }: ButtonProps) => {
+const Button = ({ children, btnType, type, isSubmitting }: ButtonProps) => {
   return (
-    <ButtonStyled type={type} $btnType={btnType}>
+    <ButtonStyled disabled={isSubmitting} type={type} $btnType={btnType}>
       {children}
     </ButtonStyled>
   );

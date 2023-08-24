@@ -12,8 +12,9 @@ import { useState } from 'react';
 import Prices from '@/components/prices';
 import styled from 'styled-components';
 import Recipes from '@/components/recipes';
-import Hero from '../public/hero.jpg';
+
 import { ToastContainer } from 'react-toastify';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 export default function Home() {
   const [headerHeight, setHeaderHeight] = useState(0);
   const updateHeaderHeight = (newHeight: number) => {
@@ -21,34 +22,37 @@ export default function Home() {
   };
   const ContainerStyled1 = styled.div<{ $headerHeight?: number }>`
     position: relative;
-
     height: 100vh;
   `;
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
+
   return (
-    <main className="main">
-      <Header updateHeaderHeight={updateHeaderHeight} />
-      {/* <Image
+    <GoogleReCaptchaProvider reCaptchaKey={siteKey} language="fi">
+      <main className="main">
+        <Header updateHeaderHeight={updateHeaderHeight} />
+        {/* <Image
         src={Hero}
         style={{ width: '100%', height: 'auto' }}
         alt="Hero image with farm and a lake in the background with blue berries and asparagus"
       /> */}
-      <ContainerStyled1 $headerHeight={headerHeight}>
-        <Image
-          src="/hero.jpg"
-          fill={true}
-          alt="Hero image with farm and a lake in the background with blue berries and asparagus"
-          priority
-        />
-      </ContainerStyled1>
-      {/* <Container headerHeight={headerHeight} /> */}
-      <AboutUs headerHeight={headerHeight} />
-      <Prices headerHeight={headerHeight} />
-      <Recipes headerHeight={headerHeight} />
-      <OpenHours headerHeight={headerHeight} />
-      <Payment headerHeight={headerHeight} />
-      <Contact headerHeight={headerHeight} />
-      <Footer headerHeight={headerHeight} />
-      <ToastContainer />
-    </main>
+        <ContainerStyled1 $headerHeight={headerHeight}>
+          <Image
+            src="/hero.jpg"
+            fill={true}
+            alt="Hero image with farm and a lake in the background with blue berries and asparagus"
+            priority
+          />
+        </ContainerStyled1>
+        {/* <Container headerHeight={headerHeight} /> */}
+        <AboutUs headerHeight={headerHeight} />
+        <Prices headerHeight={headerHeight} />
+        <Recipes headerHeight={headerHeight} />
+        <OpenHours headerHeight={headerHeight} />
+        <Payment headerHeight={headerHeight} />
+        <Contact headerHeight={headerHeight} />
+        <Footer headerHeight={headerHeight} />
+        <ToastContainer />
+      </main>
+    </GoogleReCaptchaProvider>
   );
 }

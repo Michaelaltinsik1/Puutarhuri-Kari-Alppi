@@ -36,6 +36,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
+
     return NextResponse.json({
       message: 'Ditt meddelande har skickats. Vi hör av oss inom kort',
     });

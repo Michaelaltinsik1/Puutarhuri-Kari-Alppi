@@ -9,13 +9,15 @@ import { SecondaryHeading, Subheading } from '@/styles/styles';
 import { Body } from '@/styles/styles';
 import TextWithIcon from './TextWithIcon';
 import { Icons } from './TextWithIcon';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { sendEmail } from './minorComponents/email';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Loader from './minorComponents/Loader';
 import { toast } from 'react-toastify';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { verifyCaptchaAction } from './minorComponents/captcha';
 
 interface ContactProps {
   headerHeight: number;
@@ -78,6 +80,8 @@ const SecondaryHeadingGrid = styled(SecondaryHeading)`
   grid-area: title;
 `;
 const Contact = ({ headerHeight }: ContactProps) => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const {
     register,
     handleSubmit,
@@ -91,32 +95,73 @@ const Contact = ({ headerHeight }: ContactProps) => {
   });
 
   const onSubmit = handleSubmit(async (data) => {
-    const response: { isError: boolean; message: string } = await sendEmail({
-      name: data.name,
-      email: data.email,
-      message: data.message,
-    });
-    if (response.isError) {
-      toast.error(
-        'Något gick fel. Kontakta oss via email michaelaltinisik1@gmail.com eller ring 0725577888.',
-        {
-          autoClose: false,
-          type: 'error',
-          position: 'bottom-right',
-          closeOnClick: true,
-        }
-      );
-    } else {
-      toast.success('Ditt meddelande har skickats. Vi hör av oss inom kort.', {
-        autoClose: 3000,
-        type: 'success',
-        position: 'bottom-right',
-        closeOnClick: true,
-      });
+    if (!executeRecaptcha) {
+      console.log('Execute recaptcha not yet available ');
+      return;
     }
-    reset();
+    const token = await executeRecaptcha('onSubmit');
+
+    const verified = await verifyCaptchaAction(token);
+
+    if (verified) {
+      const response: { isError: boolean; message: string } = await sendEmail({
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      });
+      if (response.isError) {
+        toast.error(
+          'Något gick fel. Kontakta oss via email michaelaltinisik1@gmail.com eller ring 0725577888.',
+          {
+            autoClose: false,
+            type: 'error',
+            position: 'bottom-right',
+            closeOnClick: true,
+          }
+        );
+      } else {
+        toast.success(
+          'Ditt meddelande har skickats. Vi hör av oss inom kort.',
+          {
+            autoClose: 3000,
+            type: 'success',
+            position: 'bottom-right',
+            closeOnClick: true,
+          }
+        );
+      }
+      reset();
+    }
   });
 
+  const submitEnquiryForm = (
+    gReCaptchaToken: string,
+    name: string,
+    email: string,
+    message: string
+  ) => {
+    fetch('/api/recaptcha', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+        gRecaptchaToken: gReCaptchaToken,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res?.status === 'success') {
+          //setNotification(res?.message);
+        } else {
+          //setNotification(res?.message);
+        }
+      });
+  };
   return (
     <DivStyled $headerHeight={headerHeight - 1} id="contact">
       <SecondaryHeadingGrid>Kontakta us</SecondaryHeadingGrid>
@@ -151,7 +196,11 @@ const Contact = ({ headerHeight }: ContactProps) => {
           label="Message"
           placeholder="Vad har du på hjärtat?"
         />
-        <Button type="submit" btnType={ButtonType.submit}>
+        <Button
+          type="submit"
+          isSubmitting={isSubmitting}
+          btnType={ButtonType.submit}
+        >
           {isSubmitting ? <Loader /> : 'Skicka meddelande'}
         </Button>
       </Form>
