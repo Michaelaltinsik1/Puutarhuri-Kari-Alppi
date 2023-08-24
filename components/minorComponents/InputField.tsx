@@ -2,9 +2,13 @@ import { styled } from 'styled-components';
 import { colors } from '@/utils/colors';
 import { devices } from '@/utils/devices';
 
+import { ErrorMessage } from '@/styles/styles';
 interface InputProps {
   placeholder?: string;
   label: string;
+  register?: any;
+  name: string;
+  errors?: string;
 }
 const Input = styled.input`
   background-color: ${colors.gray_50};
@@ -24,15 +28,33 @@ const Label = styled.label`
   color: ${colors.gray_900};
   font-weight: 600;
   &:not(:first-of-type) {
-    margin-top: 24px;
+    margin-top: 8px;
   }
 `;
 
-const InputField = ({ placeholder, label }: InputProps) => {
+const InputField = ({
+  placeholder,
+  label,
+  register,
+  name,
+  errors,
+}: InputProps) => {
   return (
     <Label>
       {label}
-      <Input placeholder={placeholder ? placeholder : ''} />
+      {register && (
+        <>
+          <Input
+            {...register(name)}
+            placeholder={placeholder ? placeholder : ''}
+          />
+          {errors ? (
+            <ErrorMessage>{errors}</ErrorMessage>
+          ) : (
+            <ErrorMessage></ErrorMessage>
+          )}
+        </>
+      )}
     </Label>
   );
 };

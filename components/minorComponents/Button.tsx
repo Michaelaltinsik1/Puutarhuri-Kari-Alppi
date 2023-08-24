@@ -9,36 +9,45 @@ export enum ButtonType {
 interface ButtonProps {
   children: ReactNode;
   btnType: ButtonType;
+  type: 'button' | 'submit' | 'reset';
 }
 
 const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
   height: 52px;
 
   font-size: 16px;
+  border: 1px solid black;
   ${(props) =>
     props.$btnType === ButtonType.submit && {
-      backgroundColor: colors.green,
+      backgroundColor: colors.submitButton,
       minWidth: '100%',
-      color: colors.gray_900,
+      color: colors.gray_50,
       borderRadius: '12px',
-      marginTop: '24px',
+      marginTop: '8px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     }}
   &:hover {
     ${(props) =>
       props.$btnType === ButtonType.submit && {
-        backgroundColor: colors.greenHover,
+        backgroundColor: colors.submitButtonHover,
       }}
   }
   &:active {
     ${(props) =>
       props.$btnType === ButtonType.submit && {
-        backgroundColor: colors.greenActive,
+        backgroundColor: colors.submitButtonActive,
       }}
   }
 `;
 
-const Button = ({ children, btnType }: ButtonProps) => {
-  return <ButtonStyled $btnType={btnType}>{children}</ButtonStyled>;
+const Button = ({ children, btnType, type }: ButtonProps) => {
+  return (
+    <ButtonStyled type={type} $btnType={btnType}>
+      {children}
+    </ButtonStyled>
+  );
 };
 
 export default Button;

@@ -6,7 +6,9 @@ export enum colors {
   red = '#E53935',
   darkRed = '#6E0707',
   green = '#C1E1C1',
-  greenHover = '#c7e4c7',
-  greenActive = '#cde7cd',
+  submitButton = '#c62828',
+  submitButtonHover = '#b71c1c',
+  submitButtonActive = '#d50000',
+  error = '#7E0707',
   khabi = '#BBAE8B',
 }

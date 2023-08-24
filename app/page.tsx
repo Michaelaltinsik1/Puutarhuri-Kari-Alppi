@@ -1,7 +1,7 @@
 'use client';
 import Header from '@/components/header';
 import Container from '@/components/container';
-
+import 'react-toastify/dist/ReactToastify.css';
 import AboutUs from '@/components/aboutus';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
@@ -13,6 +13,7 @@ import Prices from '@/components/prices';
 import styled from 'styled-components';
 import Recipes from '@/components/recipes';
 import Hero from '../public/hero.jpg';
+import { ToastContainer } from 'react-toastify';
 export default function Home() {
   const [headerHeight, setHeaderHeight] = useState(0);
   const updateHeaderHeight = (newHeight: number) => {
@@ -47,6 +48,7 @@ export default function Home() {
       <Payment headerHeight={headerHeight} />
       <Contact headerHeight={headerHeight} />
       <Footer headerHeight={headerHeight} />
+      <ToastContainer />
     </main>
   );
 }

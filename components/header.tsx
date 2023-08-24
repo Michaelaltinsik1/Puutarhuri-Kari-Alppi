@@ -14,7 +14,7 @@ const HeaderStyled = styled.header`
   box-sizing: border-box;
   position: sticky;
   top: 0;
-  z-index: 100000;
+  z-index: 9000;
   display: flex;
   background-color: ${colors.green};
   padding: 20px 16px;

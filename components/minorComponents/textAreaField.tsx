@@ -2,9 +2,13 @@ import { styled } from 'styled-components';
 import { colors } from '@/utils/colors';
 import { devices } from '@/utils/devices';
 
+import { ErrorMessage } from '@/styles/styles';
 interface TextAreaProps {
   placeholder?: string;
   label: string;
+  errors?: string;
+  register?: any;
+  name: string;
 }
 const TextAreaStyled = styled.textarea`
   background-color: ${colors.gray_50};
@@ -26,15 +30,35 @@ const Label = styled.label`
   color: ${colors.gray_900};
   font-weight: 600;
   &:not(:first-of-type) {
-    margin-top: 24px;
+    margin-top: 8px;
   }
 `;
 
-const TextArea = ({ placeholder, label }: TextAreaProps) => {
+const TextArea = ({
+  placeholder,
+  label,
+  errors,
+  name,
+  register,
+}: TextAreaProps) => {
   return (
     <Label>
       {label}
-      <TextAreaStyled placeholder={placeholder ? placeholder : ''} />
+      {register ? (
+        <>
+          <TextAreaStyled
+            {...register(name)}
+            placeholder={placeholder ? placeholder : ''}
+          />
+          {errors ? (
+            <ErrorMessage>{errors}</ErrorMessage>
+          ) : (
+            <ErrorMessage></ErrorMessage>
+          )}
+        </>
+      ) : (
+        <TextAreaStyled placeholder={placeholder ? placeholder : ''} />
+      )}
     </Label>
   );
 };

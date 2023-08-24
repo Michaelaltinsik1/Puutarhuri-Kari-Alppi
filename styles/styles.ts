@@ -64,7 +64,18 @@ export const Body = styled.p`
   letter-spacing: 0px;
   margin-bottom: 16px;
 `;
-
+export const ErrorMessage = styled.p`
+  font-size: 16px;
+  color: ${colors.error};
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-weight: bold;
+  min-height: 25px;
+  margin: 4px 0px;
+  display: flex;
+  align-items: center;
+`;
 export const FooterLink = styled(Link)`
   font-size: 24px;
   line-height: 150%;

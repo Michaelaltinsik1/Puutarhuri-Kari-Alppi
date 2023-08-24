@@ -9,12 +9,41 @@ import { SecondaryHeading, Subheading } from '@/styles/styles';
 import { Body } from '@/styles/styles';
 import TextWithIcon from './TextWithIcon';
 import { Icons } from './TextWithIcon';
+import { useState } from 'react';
+import { sendEmail } from './minorComponents/email';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import Loader from './minorComponents/Loader';
+import { toast } from 'react-toastify';
+
 interface ContactProps {
   headerHeight: number;
 }
+
+interface FormFields {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const schema = yup.object({
+  name: yup.string().required('Namn är ett obligatoriskt fält'),
+  email: yup
+    .string()
+    .email('Ogiltig mailadress')
+    .required('Mailadress är ett obligatoriskt fält'),
+  message: yup.string().required('Ange ditt meddelande'),
+});
+const defaultValues = {
+  name: '',
+  email: '',
+  message: '',
+};
+
 const DivStyled = styled.div<{ $headerHeight?: number }>`
   display: grid;
-  /* flex-direction: column; */
+
   grid-template-areas: 'title' 'contact' 'form';
   background-color: ${colors.khabi};
   scroll-margin-top: ${(props) =>
@@ -49,6 +78,45 @@ const SecondaryHeadingGrid = styled(SecondaryHeading)`
   grid-area: title;
 `;
 const Contact = ({ headerHeight }: ContactProps) => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormFields>({
+    defaultValues,
+    mode: 'onSubmit',
+
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = handleSubmit(async (data) => {
+    const response: { isError: boolean; message: string } = await sendEmail({
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    });
+    if (response.isError) {
+      toast.error(
+        'Något gick fel. Kontakta oss via email michaelaltinisik1@gmail.com eller ring 0725577888.',
+        {
+          autoClose: false,
+          type: 'error',
+          position: 'bottom-right',
+          closeOnClick: true,
+        }
+      );
+    } else {
+      toast.success('Ditt meddelande har skickats. Vi hör av oss inom kort.', {
+        autoClose: 3000,
+        type: 'success',
+        position: 'bottom-right',
+        closeOnClick: true,
+      });
+    }
+    reset();
+  });
+
   return (
     <DivStyled $headerHeight={headerHeight - 1} id="contact">
       <SecondaryHeadingGrid>Kontakta us</SecondaryHeadingGrid>
@@ -61,16 +129,31 @@ const Contact = ({ headerHeight }: ContactProps) => {
           text="Vasagatan 2. Stockholm, 12345, Sverige"
         />
       </Container>
-      <Form
-        action=""
-        onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
-          event.preventDefault()
-        }
-      >
-        <InputField label="Name" placeholder="Michael Altinisik" />
-        <InputField label="Email" placeholder="Mickealt@hotmail.se" />
-        <TextArea label="Description" placeholder="Vad har du på hjärtat?" />
-        <Button btnType={ButtonType.submit}>Skicka meddelande</Button>
+      <Form onSubmit={onSubmit}>
+        <InputField
+          name="name"
+          register={register}
+          label="Name"
+          placeholder="Michael Altinisik"
+          errors={errors.name?.message}
+        />
+        <InputField
+          register={register}
+          name="email"
+          label="Email"
+          placeholder="Mickealt@hotmail.se"
+          errors={errors.email?.message}
+        />
+        <TextArea
+          errors={errors.message?.message}
+          register={register}
+          name="message"
+          label="Message"
+          placeholder="Vad har du på hjärtat?"
+        />
+        <Button type="submit" btnType={ButtonType.submit}>
+          {isSubmitting ? <Loader /> : 'Skicka meddelande'}
+        </Button>
       </Form>
     </DivStyled>
   );
