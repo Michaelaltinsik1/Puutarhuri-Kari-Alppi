@@ -32,6 +32,7 @@ export const SecondaryHeading = styled.h2`
   line-height: 140%;
   letter-spacing: 0px;
   margin-bottom: 20px;
+
   @media (min-width: ${devices.desktop}) {
     font-size: 48px;
     letter-spacing: -1px;
@@ -39,6 +40,24 @@ export const SecondaryHeading = styled.h2`
   }
   @media (max-width: ${devices.desktopHeaderEdgeCase}) {
     font-size: 40px;
+  }
+`;
+
+export const TertiaryHeading = styled.h3`
+  color: ${colors.gray_900};
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  display: none;
+  @media (min-width: ${devices.tablet}) {
+    display: block;
+  }
+  @media (min-width: ${devices.desktop}) {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+  @media (max-width: ${devices.desktopHeaderEdgeCase}) {
+    font-size: 32px;
   }
 `;
 
@@ -105,7 +124,7 @@ export const NavLink = styled(Link)`
   box-sizing: border-box;
   white-space: nowrap;
   color: ${colors.gray_900};
-  font-size: 40px;
+  font-size: 24px;
   line-height: 150%;
   letter-spacing: 0px;
   padding: 24px 16px;
@@ -119,14 +138,14 @@ export const NavLink = styled(Link)`
   }
 
   @media (min-width: ${devices.desktop}) {
-    font-size: 40px;
+    font-size: 24px;
     line-height: 140%;
     letter-spacing: -1px;
     padding: 32px 24px;
     display: inline;
   }
   @media (max-width: ${devices.desktopHeaderEdgeCase}) {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 140%;
     letter-spacing: -1px;
     padding: 32px 24px;

@@ -11,4 +11,5 @@ export enum colors {
   submitButtonActive = '#d50000',
   error = '#7E0707',
   khabi = '#BBAE8B',
+  progressBar = '#234B02',
 }

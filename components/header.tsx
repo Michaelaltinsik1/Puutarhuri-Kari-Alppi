@@ -1,6 +1,6 @@
 import { colors } from '@/utils/colors';
 import Image from 'next/image';
-import { Title } from '@/styles/styles';
+import { Title, TertiaryHeading } from '@/styles/styles';
 import { styled } from 'styled-components';
 import { devices } from '@/utils/devices';
 import { useState, useRef, useLayoutEffect } from 'react';
@@ -112,9 +112,14 @@ const Header = ({ updateHeaderHeight }: HeaderProps) => {
       <picture>
         <source media="(min-width: 1201px)" srcSet="/Logo.png" />
         <source media="(max-width: 1200px)" srcSet="/LogoMobile.png" />
-        <img src="/Logo.png" alt="Liiketoiminta logo" />
+        <img
+          src="/Logo.png"
+          alt="Liiketoiminta logo"
+          width={100}
+          height={100}
+        />
       </picture>
-      <Title>Puutarhuri Kari Alppi</Title>
+      <TertiaryHeading>Puutarhuri Kari Alppi</TertiaryHeading>
       {isOpen ? (
         <MenuToggleButton
           onClick={closeMenu}
