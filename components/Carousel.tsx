@@ -7,6 +7,7 @@ import CircularButton from './minorComponents/CircularButton';
 import RecipeCard from './RecipeCard';
 import { devices } from '@/utils/devices';
 import { colors } from '@/utils/colors';
+import { Recipe } from './RecipeCard';
 
 import { SecondaryHeading } from '@/styles/styles';
 
@@ -17,6 +18,10 @@ const DESKTOPNROFREVIEWCARDSCONTAINER = 3;
 
 const MOBILE_SCREEN_MAX = 768;
 const TABLETSCREEN_SCREEN_MAX = 1200;
+
+interface CarouseProps {
+  toggleSingleRecipeView: (recipe: Recipe) => void;
+}
 
 enum Devices {
   MOBILE = 'mobile',
@@ -89,7 +94,7 @@ const ProgressBarContainer = styled.div<{
       width: `calc(${props.$value}%)`,
     }}
 `;
-const Carousel = () => {
+const Carousel = ({ toggleSingleRecipeView }: CarouseProps) => {
   const [currentXPosition, setCurrentXPosition] = useState<number>(0);
   const [index, setIndex] = useState<number>(0);
   const [value, setValue] = useState<number>(0);
@@ -268,12 +273,11 @@ const Carousel = () => {
             transform: `translateX(${-currentXPosition}%)`,
           }}
         >
-          {recipes.map((data) => (
+          {recipes.map((data: Recipe) => (
             <RecipeCard
               key={data.id}
-              title={data.name}
-              description={data.description}
-              imgUrl={data.img}
+              recipe={data}
+              toggleSingleRecipeView={toggleSingleRecipeView}
             />
           ))}
         </InnerDiv>

@@ -1,184 +1,415 @@
 [
-  {
-     "id":1,
-     "name":"Dish 1",
-     "img":"/Logo.png",
-     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-     "portions":4,
-     "ingredients":[
-        "5 st ägg",
-        "0.5 krm salt",
-        "2.5 dl strösocker",
-        "4.5 dl svartpeppar",
-        "3 dl vispgrädde",
-        "0.5 msk majsstärkelse",
-        "4 dl mjölk",
-        "5 gram skinka"
+   {
+     "id": 1,
+     "name": "Dish 1",
+     "img": "/Logo.png",
+     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+     "portions": 4,
+     "ingredients": [
+       {
+         "value": 5,
+         "unit": "st",
+         "name": "ägg"
+       },
+       {
+         "value": 0.5,
+         "unit": "krm",
+         "name": "salt"
+       },
+       {
+         "value": 2.5,
+         "unit": "dl",
+         "name": "strösocker"
+       },
+       {
+         "value": 4.5,
+         "unit": "dl",
+         "name": "svartpeppar"
+       },
+       {
+         "value": 3,
+         "unit": "dl",
+         "name": "vispgrädde"
+       },
+       {
+         "value": 0.5,
+         "unit": "msk",
+         "name": "majsstärkelse"
+       },
+       {
+         "value": 4,
+         "unit": "dl",
+         "name": "mjölk"
+       },
+       {
+         "value": 5,
+         "unit": "gram",
+         "name": "skinka"
+       }
      ],
-     "instrcutions":[
-        "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
-        "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
-        "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
-        "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
-        "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
-        "Vispa grädden och bred ut över marängen strax före servering.",
-        "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
+     "instructions": [
+       "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
+       "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
+       "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
+       "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
+       "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
+       "Vispa grädden och bred ut över marängen strax före servering.",
+       "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
      ]
-  },
-  {
-     "id":2,
-     "name":"Dish 2",
-     "img":"/Logo.png",
-     "description":"Lorem ipsum dolor sit amet, consedolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui ofctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-     "portions":4,
-     "ingredients":[
-        "5 st ägg",
-        "0.5 krm salt",
-        "2.5 dl strösocker",
-        "4.5 dl svartpeppar",
-        "3 dl vispgrädde",
-        "0.5 msk majsstärkelse",
-        "4 dl mjölk",
-        "5 gram skinka"
+   },
+   {
+     "id": 2,
+     "name": "Dish 2",
+     "img": "/Logo.png",
+     "description": "Lorem ipsum dolor sit amet, consedolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui ofctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+     "portions": 4,
+     "ingredients": [
+       {
+         "value": 5,
+         "unit": "st",
+         "name": "ägg"
+       },
+       {
+         "value": 0.5,
+         "unit": "krm",
+         "name": "salt"
+       }
      ],
-     "instrcutions":[
-        "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
-        "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
-        "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
-        "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
-        "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
-        "Vispa grädden och bred ut över marängen strax före servering.",
-        "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
+     "instructions": [
+       "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
+       "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott."
      ]
-  },
-  {
-     "id":3,
-     "name":"Dish 3",
-     "img":"/Logo.png",
-     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-     "portions":4,
-     "ingredients":[
-        "5 st ägg",
-        "0.5 krm salt",
-        "2.5 dl strösocker",
-        "4.5 dl svartpeppar",
-        "3 dl vispgrädde",
-        "0.5 msk majsstärkelse",
-        "4 dl mjölk",
-        "5 gram skinka"
+   },
+   {
+     "id": 3,
+     "name": "Dish 3",
+     "img": "/Logo.png",
+     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+     "portions": 4,
+     "ingredients": [
+       {
+         "value": 5,
+         "unit": "st",
+         "name": "ägg"
+       },
+       {
+         "value": 0.5,
+         "unit": "krm",
+         "name": "salt"
+       },
+       {
+         "value": 2.5,
+         "unit": "dl",
+         "name": "strösocker"
+       },
+       {
+         "value": 4.5,
+         "unit": "dl",
+         "name": "svartpeppar"
+       },
+       {
+         "value": 3,
+         "unit": "dl",
+         "name": "vispgrädde"
+       },
+       {
+         "value": 0.5,
+         "unit": "msk",
+         "name": "majsstärkelse"
+       },
+       {
+         "value": 4,
+         "unit": "dl",
+         "name": "mjölk"
+       },
+       {
+         "value": 5,
+         "unit": "gram",
+         "name": "skinka"
+       },{
+        "value": 5,
+        "unit": "st",
+        "name": "äggg"
+      },
+      {
+        "value": 0.5,
+        "unit": "krm",
+        "name": "saltt"
+      },
+      {
+        "value": 2.5,
+        "unit": "dl",
+        "name": "strösockerr"
+      },
+      {
+        "value": 4.5,
+        "unit": "dl",
+        "name": "svartpepparr"
+      },
+      {
+        "value": 3,
+        "unit": "dl",
+        "name": "vispgräddeg"
+      },
+      {
+        "value": 0.5,
+        "unit": "msk",
+        "name": "majsstärkelseg"
+      },
+      {
+        "value": 4,
+        "unit": "dl",
+        "name": "mjölkg"
+      },
+      {
+        "value": 5,
+        "unit": "gram",
+        "name": "skinkaa"
+      }
      ],
-     "instrcutions":[
-        "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
-        "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
-        "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
-        "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
-        "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
-        "Vispa grädden och bred ut över marängen strax före servering.",
-        "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
+     "instructions": [
+       "1Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
+       "2Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
+       "3Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
+       "4Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
+       "5Öppna sedan ugnsluckan och låt marängen svalna i ugnenf.",
+       "6Vispa grädden och bred ut över marängen strax före serveringf.",
+       "7Garnera med frukt och bär och kläm ut passionsfrukternaf över frukten.","Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
+       "8Grädda i ugn i 130 grader i 1 timme och 15 minuterf.",
+       "9Öppna sedan ugnsluckan och låt marängen svalna i ugnenf.",
+       "0Vispa grädden och bred ut över marängen strax före servering.f"
      ]
-  },
-  {
-     "id":4,
-     "name":"Dish 4",
-     "img":"/Logo.png",
-     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-     "portions":4,
-     "ingredients":[
-        "5 st ägg",
-        "0.5 krm salt",
-        "2.5 dl strösocker",
-        "4.5 dl svartpeppar",
-        "3 dl vispgrädde",
-        "0.5 msk majsstärkelse",
-        "4 dl mjölk",
-        "5 gram skinka"
+   },
+   {
+     "id": 4,
+     "name": "Dish 4",
+     "img": "/Logo.png",
+     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+     "portions": 4,
+     "ingredients": [
+       {
+         "value": 5,
+         "unit": "st",
+         "name": "ägg"
+       },
+       {
+         "value": 0.5,
+         "unit": "krm",
+         "name": "salt"
+       },
+       {
+         "value": 2.5,
+         "unit": "dl",
+         "name": "strösocker"
+       },
+       {
+         "value": 4.5,
+         "unit": "dl",
+         "name": "svartpeppar"
+       },
+       {
+         "value": 3,
+         "unit": "dl",
+         "name": "vispgrädde"
+       },
+       {
+         "value": 0.5,
+         "unit": "msk",
+         "name": "majsstärkelse"
+       },
+       {
+         "value": 4,
+         "unit": "dl",
+         "name": "mjölk"
+       },
+       {
+         "value": 5,
+         "unit": "gram",
+         "name": "skinka"
+       }
      ],
-     "instrcutions":[
-        "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
-        "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
-        "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
-        "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
-        "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
-        "Vispa grädden och bred ut över marängen strax före servering.",
-        "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
+     "instructions": [
+       "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
+       "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
+       "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
+       "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
+       "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
+       "Vispa grädden och bred ut över marängen strax före servering.",
+       "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
      ]
-  },
-  {
-     "id":5,
-     "name":"Dish 5",
-     "img":"/Logo.png",
-     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-     "portions":4,
-     "ingredients":[
-        "5 st ägg",
-        "0.5 krm salt",
-        "2.5 dl strösocker",
-        "4.5 dl svartpeppar",
-        "3 dl vispgrädde",
-        "0.5 msk majsstärkelse",
-        "4 dl mjölk",
-        "5 gram skinka"
+   },
+   {
+     "id": 5,
+     "name": "Dish 5",
+     "img": "/Logo.png",
+     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+     "portions": 4,
+     "ingredients": [
+       {
+         "value": 5,
+         "unit": "st",
+         "name": "ägg"
+       },
+       {
+         "value": 0.5,
+         "unit": "krm",
+         "name": "salt"
+       },
+       {
+         "value": 2.5,
+         "unit": "dl",
+         "name": "strösocker"
+       },
+       {
+         "value": 4.5,
+         "unit": "dl",
+         "name": "svartpeppar"
+       },
+       {
+         "value": 3,
+         "unit": "dl",
+         "name": "vispgrädde"
+       },
+       {
+         "value": 0.5,
+         "unit": "msk",
+         "name": "majsstärkelse"
+       },
+       {
+         "value": 4,
+         "unit": "dl",
+         "name": "mjölk"
+       },
+       {
+         "value": 5,
+         "unit": "gram",
+         "name": "skinka"
+       }
      ],
-     "instrcutions":[
-        "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
-        "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
-        "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
-        "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
-        "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
-        "Vispa grädden och bred ut över marängen strax före servering.",
-        "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
+     "instructions": [
+       "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
+       "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
+       "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
+       "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
+       "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
+       "Vispa grädden och bred ut över marängen strax före servering.",
+       "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
      ]
-  },
-  {
-     "id":6,
-     "name":"Dish 6",
-     "img":"/Logo.png",
-     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-     "portions":4,
-     "ingredients":[
-        "5 st ägg",
-        "0.5 krm salt",
-        "2.5 dl strösocker",
-        "4.5 dl svartpeppar",
-        "3 dl vispgrädde",
-        "0.5 msk majsstärkelse",
-        "4 dl mjölk",
-        "5 gram skinka"
+   },
+   {
+     "id": 6,
+     "name": "Dish 6",
+     "img": "/Logo.png",
+     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+     "portions": 4,
+     "ingredients": [
+       {
+         "value": 5,
+         "unit": "st",
+         "name": "ägg"
+       },
+       {
+         "value": 0.5,
+         "unit": "krm",
+         "name": "salt"
+       },
+       {
+         "value": 2.5,
+         "unit": "dl",
+         "name": "strösocker"
+       },
+       {
+         "value": 4.5,
+         "unit": "dl",
+         "name": "svartpeppar"
+       },
+       {
+         "value": 3,
+         "unit": "dl",
+         "name": "vispgrädde"
+       },
+       {
+         "value": 0.5,
+         "unit": "msk",
+         "name": "majsstärkelse"
+       },
+       {
+         "value": 4,
+         "unit": "dl",
+         "name": "mjölk"
+       },
+       {
+         "value": 5,
+         "unit": "gram",
+         "name": "skinka"
+       }
      ],
-     "instrcutions":[
-        "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
-        "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
-        "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
-        "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
-        "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
-        "Vispa grädden och bred ut över marängen strax före servering.",
-        "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
+     "instructions": [
+       "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
+       "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
+       "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
+       "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
+       "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
+       "Vispa grädden och bred ut över marängen strax före servering.",
+       "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
      ]
-  },
-  {
-     "id":7,
-     "name":"Dish 7",
-     "img":"/Logo.png",
-     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-     "portions":4,
-     "ingredients":[
-        "5 st ägg",
-        "0.5 krm salt",
-        "2.5 dl strösocker",
-        "4.5 dl svartpeppar",
-        "3 dl vispgrädde",
-        "0.5 msk majsstärkelse",
-        "4 dl mjölk",
-        "5 gram skinka"
+   },
+   {
+     "id": 7,
+     "name": "Dish 7",
+     "img": "/Logo.png",
+     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+     "portions": 4,
+     "ingredients": [
+       {
+         "value": 5,
+         "unit": "st",
+         "name": "ägg"
+       },
+       {
+         "value": 0.5,
+         "unit": "krm",
+         "name": "salt"
+       },
+       {
+         "value": 2.5,
+         "unit": "dl",
+         "name": "strösocker"
+       },
+       {
+         "value": 4.5,
+         "unit": "dl",
+         "name": "svartpeppar"
+       },
+       {
+         "value": 3,
+         "unit": "dl",
+         "name": "vispgrädde"
+       },
+       {
+         "value": 0.5,
+         "unit": "msk",
+         "name": "majsstärkelse"
+       },
+       {
+         "value": 4,
+         "unit": "dl",
+         "name": "mjölk"
+       },
+       {
+         "value": 5,
+         "unit": "gram",
+         "name": "skinka"
+       }
      ],
-     "instrcutions":[
-        "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
-        "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
-        "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
-        "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
-        "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
-        "Vispa grädden och bred ut över marängen strax före servering.",
-        "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
+     "instructions": [
+       "Marängen blir bäst om äggvitorna är rumstempererade. Vispa dem till ett mjukt skum tillsammans med saltet.",
+       "Tillsätt sedan sockret matskedsvis och vispa tills sockret har löst upp sig helt. Tillsätt vinäger och majsstärkelse och vänd försiktigt ner det i marängen med en slickepott.",
+       "Lägg upp marängen på ett bakplåtspapper och forma till en tårtbotten, ca 25 cm i diameter.",
+       "Grädda i ugn i 130 grader i 1 timme och 15 minuter.",
+       "Öppna sedan ugnsluckan och låt marängen svalna i ugnen.",
+       "Vispa grädden och bred ut över marängen strax före servering.",
+       "Garnera med frukt och bär och kläm ut passionsfrukterna över frukten."
      ]
-  }
-]
+   }
+ ]

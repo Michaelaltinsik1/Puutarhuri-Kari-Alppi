@@ -14,7 +14,7 @@ const HeaderStyled = styled.header`
   box-sizing: border-box;
   position: sticky;
   top: 0;
-  z-index: 9000;
+  z-index: 1000;
   display: flex;
   background-color: ${colors.green};
   padding: 20px 16px;
@@ -112,12 +112,7 @@ const Header = ({ updateHeaderHeight }: HeaderProps) => {
       <picture>
         <source media="(min-width: 1201px)" srcSet="/Logo.png" />
         <source media="(max-width: 1200px)" srcSet="/LogoMobile.png" />
-        <img
-          src="/Logo.png"
-          alt="Liiketoiminta logo"
-          width={100}
-          height={100}
-        />
+        <img src="/Logo.png" alt="Liiketoiminta logo" width={80} height={80} />
       </picture>
       <TertiaryHeading>Puutarhuri Kari Alppi</TertiaryHeading>
       {isOpen ? (

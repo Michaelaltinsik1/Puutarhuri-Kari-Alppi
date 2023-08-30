@@ -12,4 +12,6 @@ export enum colors {
   error = '#7E0707',
   khabi = '#BBAE8B',
   progressBar = '#234B02',
+  buttonHover = '#e0f2f1',
+  buttonActive = '#b2dfdb',
 }
