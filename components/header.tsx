@@ -1,6 +1,6 @@
 import { colors } from '@/utils/colors';
 import Image from 'next/image';
-import { Title, TertiaryHeading } from '@/styles/styles';
+import { TertiaryHeading } from '@/styles/styles';
 import { styled } from 'styled-components';
 import { devices } from '@/utils/devices';
 import { useState, useRef, useLayoutEffect } from 'react';
@@ -55,7 +55,7 @@ const MenuToggleButton = styled(Image)<{ $isLeftAligned?: boolean }>`
 const Nav = styled.nav<{ $isOpen?: boolean }>`
   background-color: ${colors.green};
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   flex-direction: column;
   ${(props) =>
     props?.$isOpen
@@ -88,7 +88,9 @@ const NavContainer = styled.ul`
   }
 `;
 const ListItem = styled.li`
-  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 12px 16px;
   @media (min-width: ${devices.desktop}) {
     width: auto;
   }

@@ -16,7 +16,11 @@ import HeroMobile from '../public/HeroMobile.jpg';
 import { ToastContainer } from 'react-toastify';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Title } from '@/styles/styles';
+import { colors } from '@/utils/colors';
+import { devices } from '@/utils/devices';
 
+import { ButtonType } from '@/components/minorComponents/Button';
+import { ButtonLink } from '@/styles/styles';
 const ImageStyled = styled(Image)`
   width: 100%;
   height: auto;
@@ -24,9 +28,31 @@ const ImageStyled = styled(Image)`
 
 const ContainerHero = styled.div`
   position: absolute;
-  top: 100px;
   left: 50%;
+  top: 100px;
   transform: translate(-50%, 0);
+  background-color: rgba(187, 174, 139, 0.5);
+  padding: 16px;
+  border-radius: 8px;
+  color: ${colors.gray_900};
+  @media (min-width: ${devices.tablet}) {
+    top: 16px;
+  }
+  @media (min-width: ${devices.laptop}) {
+    padding: 32px;
+    top: 50px;
+  }
+  @media (min-width: ${devices.desktop}) {
+    padding: 40px;
+    top: 100px;
+  }
+`;
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: ${devices.desktop}) {
+    flex-direction: row;
+  }
 `;
 
 export default function Home() {
@@ -44,12 +70,7 @@ export default function Home() {
     <GoogleReCaptchaProvider reCaptchaKey={siteKey} language="fi">
       <main className="main">
         <Header updateHeaderHeight={updateHeaderHeight} />
-        {/* <Image
-        src={Hero}
-        style={{ width: '100%', height: 'auto' }}
-        alt="Hero image with farm and a lake in the background with blue berries and asparagus"
-      /> */}
-        {/* <ContainerStyled1 $headerHeight={headerHeight}> */}
+
         <div style={{ position: 'relative' }}>
           <picture style={{ display: 'flex' }}>
             <source media="(max-width: 767px)" srcSet="/HeroMobile.jpg" />
@@ -58,20 +79,17 @@ export default function Home() {
           </picture>
           <ContainerHero>
             <Title>Puutarhuri Mahnalassa</Title>
-            <div>
-              <button>test</button>
-              <button>test</button>
-            </div>
+            <ButtonContainer>
+              <ButtonLink $btnType={ButtonType.secondary} href="#payment">
+                Gör en beställning
+              </ButtonLink>
+              <ButtonLink $btnType={ButtonType.outlined} href="#prices">
+                Kolla vårt utbud
+              </ButtonLink>
+            </ButtonContainer>
           </ContainerHero>
         </div>
-        {/* <Image
-            src="/hero.jpg"
-            fill={true}
-            alt="Hero image with farm and a lake in the background with blue berries and asparagus"
-            priority
-          /> */}
-        {/* </ContainerStyled1> */}
-        {/* <Container headerHeight={headerHeight} /> */}
+
         <AboutUs headerHeight={headerHeight} />
         <Prices headerHeight={headerHeight} />
         <Recipes headerHeight={headerHeight} />

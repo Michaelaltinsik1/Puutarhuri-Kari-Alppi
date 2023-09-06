@@ -4,6 +4,8 @@ import { colors } from '@/utils/colors';
 import { devices } from '@/utils/devices';
 export enum ButtonType {
   submit = 'SUBMITBUTTON',
+  secondary = 'SECONDARY',
+  outlined = 'OUTLINED',
 }
 
 interface ButtonProps {
@@ -23,6 +25,29 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
       backgroundColor: colors.submitButton,
       minWidth: '100%',
       color: colors.gray_50,
+      borderRadius: '12px',
+      marginTop: '8px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  ${(props) =>
+    props.$btnType === ButtonType.secondary && {
+      backgroundColor: colors.red,
+      minWidth: '100%',
+      color: colors.gray_50,
+      borderRadius: '12px',
+      marginTop: '8px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+    ${(props) =>
+    props.$btnType === ButtonType.outlined && {
+      backgroundColor: 'transparent',
+      border: '1px solid black',
+      minWidth: '100%',
+      color: colors.gray_900,
       borderRadius: '12px',
       marginTop: '8px',
       display: 'flex',
