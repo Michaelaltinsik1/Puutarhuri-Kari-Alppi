@@ -1,13 +1,13 @@
 import './globals.css';
 import type { Metadata } from 'next';
 
-// import { Open_Sans } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 
 import StyledComponentsRegistry from './registry';
-// export const OpenSans = Open_Sans({
-//   subsets: ['latin'],
-//   variable: '--font-open-sans',
-// });
+export const OpenSans = Open_Sans({
+  subsets: ['latin'],
+  variable: '--font-open-sans',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,8 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <body className={OpenSans.className}> */}
-      <body>
+      <body className={OpenSans.className}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
