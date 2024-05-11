@@ -13,7 +13,7 @@ export const Title = styled.h1`
   letter-spacing: -1px;
   @media (min-width: ${devices.tablet}) {
     display: block;
-    white-space: nowrap;
+    //white-space: nowrap;
   }
   @media (max-width: ${devices.desktopHeaderEdgeCase}) {
     font-size: 48px;
@@ -173,8 +173,8 @@ export const ButtonLink = styled(Link)<{ $btnType: ButtonType }>`
   }
   ${(props) =>
     props.$btnType === ButtonType.secondary && {
-      backgroundColor: colors.red,
-      color: colors.gray_50,
+      backgroundColor: colors.buttonGreen,
+      color: colors.gray_900,
       borderRadius: '12px',
       marginTop: '8px',
       display: 'flex',
@@ -183,7 +183,7 @@ export const ButtonLink = styled(Link)<{ $btnType: ButtonType }>`
     }}
   ${(props) =>
     props.$btnType === ButtonType.outlined && {
-      backgroundColor: colors.gray_50,
+      backgroundColor: colors.buttonOutlined,
       border: '1px solid black',
       color: colors.gray_900,
       borderRadius: '12px',
@@ -195,21 +195,21 @@ export const ButtonLink = styled(Link)<{ $btnType: ButtonType }>`
     &:hover {
     ${(props) =>
       props.$btnType === ButtonType.secondary && {
-        backgroundColor: colors.submitButtonHover,
+        backgroundColor: colors.buttonGreenHover,
       }}
     ${(props) =>
       props.$btnType === ButtonType.outlined && {
-        backgroundColor: colors.buttonHover,
+        backgroundColor: colors.buttonOutlinedHover,
       }}
   }
   &:active {
     ${(props) =>
       props.$btnType === ButtonType.secondary && {
-        backgroundColor: colors.submitButtonActive,
+        backgroundColor: colors.buttonGreenActive,
       }}
     ${(props) =>
       props.$btnType === ButtonType.outlined && {
-        backgroundColor: colors.buttonActive,
+        backgroundColor: colors.buttonOutlinedActive,
       }}
   }
 `;

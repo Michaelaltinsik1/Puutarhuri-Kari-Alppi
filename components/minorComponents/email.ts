@@ -26,7 +26,7 @@ export const sendEmail = async ({
       reponseMessage = {
         isError: true,
         message:
-          'Något gick fel. Kontakta oss via email michaelaltinisik1@gmail.com eller ring 0725577888',
+          'Något gick fel. Kontakta oss via email kari.alppi@gmail.com eller ring 0725577888',
       };
     });
   return reponseMessage;

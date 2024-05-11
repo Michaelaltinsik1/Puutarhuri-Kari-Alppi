@@ -9,7 +9,12 @@ import { NavLink } from '@/styles/styles';
 interface HeaderProps {
   updateHeaderHeight: (newvalue: number) => void;
 }
-
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  justify-content: space-between;
+`;
 const HeaderStyled = styled.header`
   box-sizing: border-box;
   position: sticky;
@@ -31,6 +36,7 @@ const HeaderStyled = styled.header`
 
 const MenuToggleButton = styled(Image)<{ $isLeftAligned?: boolean }>`
   display: flex;
+  margin-left: auto;
   ${(props) =>
     props.$isLeftAligned && {
       padding: '20px 16px',
@@ -111,12 +117,21 @@ const Header = ({ updateHeaderHeight }: HeaderProps) => {
   });
   return (
     <HeaderStyled ref={ref}>
-      <picture>
-        <source media="(min-width: 1201px)" srcSet="/Logo.png" />
-        <source media="(max-width: 1200px)" srcSet="/LogoMobile.png" />
-        <img src="/Logo.png" alt="Liiketoiminta logo" width={80} height={80} />
-      </picture>
-      <TertiaryHeading>Puutarhuri Kari Alppi</TertiaryHeading>
+      <NavLink onClick={closeMenu} href="#">
+        <LogoContainer>
+          <picture>
+            <source media="(min-width: 1201px)" srcSet="/Logo.png" />
+            <source media="(max-width: 1200px)" srcSet="/LogoMobile.png" />
+            <img
+              src="/Logo.png"
+              alt="Liiketoiminta logo"
+              width={80}
+              height={80}
+            />
+          </picture>
+          <TertiaryHeading>Puutarhuri Kari Alppi</TertiaryHeading>
+        </LogoContainer>
+      </NavLink>
       {isOpen ? (
         <MenuToggleButton
           onClick={closeMenu}
@@ -145,33 +160,28 @@ const Header = ({ updateHeaderHeight }: HeaderProps) => {
         />
         <NavContainer>
           <ListItem>
-            <NavLink onClick={closeMenu} href="#">
-              Hem
-            </NavLink>
-          </ListItem>
-          <ListItem>
             <NavLink onClick={closeMenu} href="#aboutUs">
-              Om oss
+              Yrityksestä
             </NavLink>
           </ListItem>
           <ListItem>
             <NavLink onClick={closeMenu} href="#prices">
-              Vårt utbud
+              Tuotteet ja hinnasto
             </NavLink>
           </ListItem>
-          <ListItem>
+          {/*<ListItem>
             <NavLink onClick={closeMenu} href="#openHours">
               Öppettider
             </NavLink>
-          </ListItem>
-          <ListItem>
+          </ListItem>*/}
+          {/*<ListItem>
             <NavLink onClick={closeMenu} href="#payment">
               Beställ
             </NavLink>
-          </ListItem>
+          </ListItem>*/}
           <ListItem>
             <NavLink onClick={closeMenu} href="#contact">
-              Kontakt
+              Yhteystiedot
             </NavLink>
           </ListItem>
         </NavContainer>

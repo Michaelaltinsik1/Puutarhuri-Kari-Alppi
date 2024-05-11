@@ -2,7 +2,7 @@ import { Body } from '@/styles/styles';
 import { styled } from 'styled-components';
 import { colors } from '@/utils/colors';
 interface PriceProps {
-  price: number;
+  price?: number;
   name: string;
 }
 const PriceText = styled.p`

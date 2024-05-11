@@ -26,14 +26,10 @@ const DivStyled = styled.div<{ $headerHeight?: number }>`
 const Prices = ({ headerHeight }: PricesProps) => {
   return (
     <DivStyled $headerHeight={headerHeight - 1} id="prices">
-      <SecondaryHeading>Priser</SecondaryHeading>
+      <SecondaryHeading>Tuotteet ja hinnasto</SecondaryHeading>
       <div>
         {products.map((product) => (
-          <PriceTag
-            name={product.name}
-            price={product.price}
-            key={product.name}
-          />
+          <PriceTag name={product.name} key={product.name} />
         ))}
       </div>
     </DivStyled>

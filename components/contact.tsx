@@ -111,7 +111,7 @@ const Contact = ({ headerHeight }: ContactProps) => {
       });
       if (response.isError) {
         toast.error(
-          'Något gick fel. Kontakta oss via email michaelaltinisik1@gmail.com eller ring 0725577888.',
+          'Något gick fel. Kontakta oss via email kari.alppi@gmail.com eller ring 0725577888.',
           {
             autoClose: false,
             type: 'error',
@@ -164,44 +164,50 @@ const Contact = ({ headerHeight }: ContactProps) => {
   };
   return (
     <DivStyled $headerHeight={headerHeight - 1} id="contact">
-      <SecondaryHeadingGrid>Kontakta us</SecondaryHeadingGrid>
+      <SecondaryHeadingGrid>Yhteystiedot</SecondaryHeadingGrid>
       <Container>
-        <Subheading>Hör gärna av er om ni har några frågor</Subheading>
-        <TextWithIcon icon={Icons.phone} text="072 66 77 789" />
-        <TextWithIcon icon={Icons.email} text="test@hotmail.com" />
+        <Subheading>
+          Otamalle yhteyttä varmistat saatavuuden ja saat vastauksen
+          kysymyksiisi. Pyrin vastaamaan viesteihin saman päivän aikana.
+        </Subheading>
+        <Subheading>
+          Avoinna sopimuksen mukaan.<br></br>Soitot kl 08 - 18.
+        </Subheading>
+        <TextWithIcon icon={Icons.phone} text="040 77 06 163" />
+        <TextWithIcon icon={Icons.email} text="kari.alppi@gmail.com" />
         <TextWithIcon
           icon={Icons.location}
-          text="Vasagatan 2. Stockholm, 12345, Sverige"
+          text="Maisematie 618. Mahnala, 39100, Suomi"
         />
       </Container>
       <Form onSubmit={onSubmit}>
         <InputField
           name="name"
           register={register}
-          label="Name"
-          placeholder="Michael Altinisik"
+          label="Nimi"
+          placeholder=""
           errors={errors.name?.message}
         />
         <InputField
           register={register}
           name="email"
-          label="Email"
-          placeholder="Mickealt@hotmail.se"
+          label="Sähköpostiosoite"
+          placeholder="kari.alppi@gmail.com"
           errors={errors.email?.message}
         />
         <TextArea
           errors={errors.message?.message}
           register={register}
           name="message"
-          label="Message"
-          placeholder="Vad har du på hjärtat?"
+          label="Viesti"
+          placeholder="Mitä sinulla on mielessäsi?"
         />
         <Button
           type="submit"
           isSubmitting={isSubmitting}
           btnType={ButtonType.submit}
         >
-          {isSubmitting ? <Loader /> : 'Skicka meddelande'}
+          {isSubmitting ? <Loader /> : 'Lähetä viesti'}
         </Button>
       </Form>
     </DivStyled>

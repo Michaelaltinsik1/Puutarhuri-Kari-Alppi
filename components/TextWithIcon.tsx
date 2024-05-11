@@ -50,7 +50,7 @@ const TextWithIcon = ({ text, icon }: TextWithIconProps) => {
       );
     } else if (icon === Icons.email) {
       return (
-        <TextWithIconStyled href="mailto:Mickealt@hotmail.se">
+        <TextWithIconStyled href={`mailto:${text}`}>
           <Container>
             <Image
               src={Email}

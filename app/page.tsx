@@ -12,7 +12,7 @@ import { useState } from 'react';
 import Prices from '@/components/prices';
 import styled from 'styled-components';
 import Recipes from '@/components/recipes';
-import HeroMobile from '../public/HeroMobile.jpg';
+import HeroMobile from '../public/HeroPuutarhuri.png';
 import { ToastContainer } from 'react-toastify';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Title } from '@/styles/styles';
@@ -31,7 +31,7 @@ const ContainerHero = styled.div`
   left: 50%;
   top: 100px;
   transform: translate(-50%, 0);
-  background-color: rgba(187, 174, 139, 0.5);
+  background-color: rgb(250, 250, 250, 0.65);
   padding: 16px;
   border-radius: 8px;
   color: ${colors.gray_900};
@@ -73,18 +73,21 @@ export default function Home() {
 
         <div style={{ position: 'relative' }}>
           <picture style={{ display: 'flex' }}>
-            <source media="(max-width: 767px)" srcSet="/HeroMobile.jpg" />
-            <source media="(min-width: 768px)" srcSet="/HeroDesktop.jpg" />
+            <source media="(max-width: 767px)" srcSet="/HeroPuutarhuri.png" />
+            <source
+              media="(min-width: 768px)"
+              srcSet="/HeroPuutarhurikarialppi.png"
+            />
             <ImageStyled src={HeroMobile} alt="hero image" />
           </picture>
           <ContainerHero>
-            <Title>Puutarhuri Mahnalassa</Title>
+            <Title>Parsaa ja pensasmustikkaa Mahnalasta!</Title>
             <ButtonContainer>
-              <ButtonLink $btnType={ButtonType.secondary} href="#payment">
-                Gör en beställning
-              </ButtonLink>
               <ButtonLink $btnType={ButtonType.outlined} href="#prices">
-                Kolla vårt utbud
+                Katso tarjonta ja saatavuus
+              </ButtonLink>
+              <ButtonLink $btnType={ButtonType.outlined} href="#contact">
+                Ota yhteyttä
               </ButtonLink>
             </ButtonContainer>
           </ContainerHero>
@@ -92,9 +95,9 @@ export default function Home() {
 
         <AboutUs headerHeight={headerHeight} />
         <Prices headerHeight={headerHeight} />
-        <Recipes headerHeight={headerHeight} />
-        <OpenHours headerHeight={headerHeight} />
-        <Payment headerHeight={headerHeight} />
+        {/* <Recipes headerHeight={headerHeight} /> */}
+        {/* <OpenHours headerHeight={headerHeight} /> */}
+        {/*<Payment headerHeight={headerHeight} />*/}
         <Contact headerHeight={headerHeight} />
         <Footer headerHeight={headerHeight} />
         <ToastContainer />

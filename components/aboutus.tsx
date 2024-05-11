@@ -28,17 +28,9 @@ const AboutUs = ({ headerHeight }: AboutUsProps) => {
   return (
     <Wrapper $headerHeight={headerHeight - 1} id="aboutUs">
       <Container>
-        <SecondaryHeading>Om oss</SecondaryHeading>
+        <SecondaryHeading>Yrityksestä</SecondaryHeading>
         <Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam ac
-          tortor vitae purus faucibus ornare suspendisse sed. Blandit turpis
-          cursus in hac. Id velit ut tortor pretium viverra suspendisse potenti
-          nullam ac.
-        </Body>
-        <Body>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ipsa
-          eveniet mollitia optio corporis culpa sequi, quidem impedit id eius?
+          Sivustoamme päivitetään parhaillaan. Kiitos kärsivällisyydestä.
         </Body>
       </Container>
     </Wrapper>

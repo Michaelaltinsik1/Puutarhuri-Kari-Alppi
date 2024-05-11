@@ -1,26 +1,19 @@
 [
   {
-     "name":"manssikka",
-     "price":15
+     "name":"Pensasmustikka",
+     "price":45,
+     "weight1:":"2.5 kg"
   },
   {
-     "name":"mustikka",
-     "price":10
+     "name":"Parsa 1 lk",
+     "price":4.5,
+     "price2": 6,
+     "price3": 18,
+     "weight1:":"250 g",
+     "weight2:":"300 g",
+     "weight3:":"1 kg"
   },
   {
-     "name":"omena",
-     "price":12
-  },
-  {
-     "name":"parsa",
-     "price":20
-  },
-  {
-     "name":"vesimeloni",
-     "price":16
-  },
-  {
-     "name":"herukka",
-     "price":8
+   "name":"Vihannesten taimet"
   }
 ]

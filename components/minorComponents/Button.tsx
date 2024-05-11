@@ -33,9 +33,9 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
     }}
   ${(props) =>
     props.$btnType === ButtonType.secondary && {
-      backgroundColor: colors.red,
+      backgroundColor: colors.buttonGreen,
       minWidth: '100%',
-      color: colors.gray_50,
+      color: colors.gray_900,
       borderRadius: '12px',
       marginTop: '8px',
       display: 'flex',

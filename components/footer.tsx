@@ -12,6 +12,12 @@ import mapMobile from '../public/MapMobile.jpg';
 interface FooterProps {
   headerHeight: number;
 }
+
+const NavStyled = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 const DivStyled = styled.div<{ $headerHeight?: number }>`
   display: flex;
   flex-direction: column;
@@ -64,10 +70,13 @@ const ImageStyled = styled(Image)`
 `;
 
 const Footer = ({ headerHeight }: FooterProps) => {
+  const destinationLat = 61.574391246702795;
+  const destinationLng = 23.286892840078547;
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}`;
   return (
     <DivStyled $headerHeight={headerHeight - 1} id="footer">
       <Container>
-        <div>
+        {/* <div>
           <SecondaryHeading>Kontakt</SecondaryHeading>
           <TextWithIcon icon={Icons.phone} text="072 66 77 789" />
           <TextWithIcon icon={Icons.email} text="test@hotmail.com" />
@@ -75,23 +84,25 @@ const Footer = ({ headerHeight }: FooterProps) => {
             icon={Icons.location}
             text="Vasagatan 2. Stockholm, 12345, Sverige"
           />
-        </div>
-        <picture style={{ display: 'flex' }}>
-          <source media="(max-width: 767px)" srcSet="/MapMobile.jpg" />
-          <source media="(min-width: 768px)" srcSet="/MapDesktop.jpg" />
-          <ImageStyled src={mapMobile} alt="Map to location" />
-        </picture>
+        </div> */}
+        <a href={googleMapsUrl} target="_blank">
+          <picture style={{ display: 'flex' }}>
+            <source media="(max-width: 767px)" srcSet="/MapMobile.jpg" />
+            <source media="(min-width: 768px)" srcSet="/MapDesktop.jpg" />
+            <ImageStyled src={mapMobile} alt="Map to location" />
+          </picture>
+        </a>
 
-        <div>
-          <SecondaryHeading>Överblick</SecondaryHeading>
-          <FooterLink href="#aboutUs">Om oss</FooterLink>
-          <FooterLink href="#prices">Vårt utbud</FooterLink>
-          <FooterLink href="#aboutUs">Priser</FooterLink>
-          <FooterLink href="#payment">Beställ</FooterLink>
-          <FooterLink href="#openHours">Öppettider</FooterLink>
-        </div>
+        <NavStyled>
+          <FooterLink href="#aboutUs">Yrityksestä</FooterLink>
+          <FooterLink href="#prices">Tuotteet ja hinnasto</FooterLink>
+          {/*<FooterLink href="#payment">Beställ</FooterLink>
+          <FooterLink href="#openHours">Öppettider</FooterLink>*/}
+        </NavStyled>
       </Container>
-      <CopyRight>Copyright &copy; 2023. All rights reserved.</CopyRight>
+      <CopyRight>
+        &copy; Puutarhuri Kari Alppi. Kaikki oikeudet pidätetään.
+      </CopyRight>
     </DivStyled>
   );
 };

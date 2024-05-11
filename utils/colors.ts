@@ -3,7 +3,6 @@ export enum colors {
   gray_600 = '#757575',
   gray_800 = '#424242',
   gray_900 = '#212121',
-  red = '#E53935',
   darkRed = '#6E0707',
   green = '#C1E1C1',
   submitButton = '#c62828',
@@ -14,4 +13,10 @@ export enum colors {
   progressBar = '#234B02',
   buttonHover = '#e0f2f1',
   buttonActive = '#b2dfdb',
+  buttonGreen = '#23d160',
+  buttonGreenHover = '#1fbc56',
+  buttonGreenActive = '#1ca74c',
+  buttonOutlined = '#b2dfdb',
+  buttonOutlinedHover = '#80cbc4',
+  buttonOutlinedActive = '#4db6ac',
 }
