@@ -167,7 +167,7 @@ const Contact = ({ headerHeight }: ContactProps) => {
       <SecondaryHeadingGrid>Yhteystiedot</SecondaryHeadingGrid>
       <Container>
         <Subheading>
-          Otamalle yhteyttä varmistat saatavuuden ja saat vastauksen
+          Otamalla yhteyttä varmistat saatavuuden ja saat vastauksen
           kysymyksiisi. Pyrin vastaamaan viesteihin saman päivän aikana.
         </Subheading>
         <Subheading>

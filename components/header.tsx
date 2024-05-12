@@ -22,7 +22,7 @@ const HeaderStyled = styled.header`
   z-index: 1000;
   display: flex;
   background-color: ${colors.green};
-  padding: 20px 16px;
+  padding: 8px 16px;
   align-items: center;
   justify-content: space-between;
   @media (min-width: ${devices.tablet}) {
@@ -30,7 +30,7 @@ const HeaderStyled = styled.header`
   }
   @media (min-width: ${devices.desktop}) {
     justify-content: flex-start;
-    padding: 24px 48px;
+    padding: 0px 32px;
   }
 `;
 
