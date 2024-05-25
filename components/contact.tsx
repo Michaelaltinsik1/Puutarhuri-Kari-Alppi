@@ -30,12 +30,12 @@ interface FormFields {
 }
 
 const schema = yup.object({
-  name: yup.string().required('Namn är ett obligatoriskt fält'),
+  name: yup.string().required('Nimi on pakollinen.'),
   email: yup
     .string()
-    .email('Ogiltig mailadress')
-    .required('Mailadress är ett obligatoriskt fält'),
-  message: yup.string().required('Ange ditt meddelande'),
+    .email('Virheellinen sähköpostiosoite.')
+    .required('Sähköpostiosoite on pakollinen.'),
+  message: yup.string().required('Kirjoita viestisi.'),
 });
 const defaultValues = {
   name: '',
@@ -81,7 +81,9 @@ const SecondaryHeadingGrid = styled(SecondaryHeading)`
 `;
 const Contact = ({ headerHeight }: ContactProps) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
-
+  const destinationLat = 61.574391246702795;
+  const destinationLng = 23.286892840078547;
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}`;
   const {
     register,
     handleSubmit,
@@ -111,7 +113,7 @@ const Contact = ({ headerHeight }: ContactProps) => {
       });
       if (response.isError) {
         toast.error(
-          'Något gick fel. Kontakta oss via email kari.alppi@gmail.com eller ring 0725577888.',
+          'Jotain meni pieleen. Ota yhteyttä sähköpostitse kari.alppi@gmail.com tai soita 040 77 06 163.',
           {
             autoClose: false,
             type: 'error',
@@ -120,15 +122,12 @@ const Contact = ({ headerHeight }: ContactProps) => {
           }
         );
       } else {
-        toast.success(
-          'Ditt meddelande har skickats. Vi hör av oss inom kort.',
-          {
-            autoClose: 3000,
-            type: 'success',
-            position: 'bottom-right',
-            closeOnClick: true,
-          }
-        );
+        toast.success('Viestisi on lähetetty. Otamme pian yhteyttä.', {
+          autoClose: 3000,
+          type: 'success',
+          position: 'bottom-right',
+          closeOnClick: true,
+        });
       }
       reset();
     }
@@ -167,15 +166,16 @@ const Contact = ({ headerHeight }: ContactProps) => {
       <SecondaryHeadingGrid>Yhteystiedot</SecondaryHeadingGrid>
       <Container>
         <Subheading>
-          Otamalla yhteyttä varmistat saatavuuden ja saat vastauksen
+          Ottamalla yhteyttä varmistat saatavuuden ja saat vastauksen
           kysymyksiisi. Pyrin vastaamaan viesteihin saman päivän aikana.
         </Subheading>
         <Subheading>
-          Avoinna sopimuksen mukaan.<br></br>Soitot kl 08 - 18.
+          Avoinna sopimuksen mukaan.<br></br>Soitot klo 08 - 18.
         </Subheading>
         <TextWithIcon icon={Icons.phone} text="040 77 06 163" />
         <TextWithIcon icon={Icons.email} text="kari.alppi@gmail.com" />
         <TextWithIcon
+          url={googleMapsUrl}
           icon={Icons.location}
           text="Maisematie 618. Mahnala, 39100, Suomi"
         />
@@ -192,7 +192,7 @@ const Contact = ({ headerHeight }: ContactProps) => {
           register={register}
           name="email"
           label="Sähköpostiosoite"
-          placeholder="kari.alppi@gmail.com"
+          placeholder="nimi.sukunimi@gmail.com"
           errors={errors.email?.message}
         />
         <TextArea
@@ -205,7 +205,7 @@ const Contact = ({ headerHeight }: ContactProps) => {
         <Button
           type="submit"
           isSubmitting={isSubmitting}
-          btnType={ButtonType.submit}
+          btnType={ButtonType.outlined}
         >
           {isSubmitting ? <Loader /> : 'Lähetä viesti'}
         </Button>

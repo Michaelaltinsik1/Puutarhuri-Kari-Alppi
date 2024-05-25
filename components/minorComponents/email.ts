@@ -26,7 +26,7 @@ export const sendEmail = async ({
       reponseMessage = {
         isError: true,
         message:
-          'Något gick fel. Kontakta oss via email kari.alppi@gmail.com eller ring 0725577888',
+          'Jotain meni pieleen. Ota yhteyttä sähköpostitse kari.alppi@gmail.com tai soita 040 77 06 163.',
       };
     });
   return reponseMessage;

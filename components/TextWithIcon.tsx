@@ -14,6 +14,7 @@ export enum Icons {
 interface TextWithIconProps {
   text: string;
   icon: Icons;
+  url?: string;
 }
 const Container = styled.div`
   min-width: 30px;
@@ -24,15 +25,15 @@ const TextWithIconStyled = styled.a<{ $isLocation?: boolean }>`
   line-height: 150%;
   color: ${colors.gray_900};
   align-items: center;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 8px;
   &:hover {
-    ${(props) => !props?.$isLocation && { textDecoration: 'underline' }}
+    text-decoration: none;
   }
-  text-underline-offset: 4px;
   margin-bottom: 16px;
 `;
 
-const TextWithIcon = ({ text, icon }: TextWithIconProps) => {
+const TextWithIcon = ({ text, icon, url = '' }: TextWithIconProps) => {
   const findIcon = () => {
     if (icon === Icons.phone) {
       return (
@@ -64,7 +65,7 @@ const TextWithIcon = ({ text, icon }: TextWithIconProps) => {
       );
     } else {
       return (
-        <TextWithIconStyled $isLocation={true}>
+        <TextWithIconStyled $isLocation={true} href={url} target="_blank">
           <Container>
             <Image
               src={Location}

@@ -38,13 +38,13 @@ export async function POST(request: NextRequest) {
     await sendMailPromise();
 
     return NextResponse.json({
-      message: 'Ditt meddelande har skickats. Vi hör av oss inom kort',
+      message: 'Viestisi on lähetetty. Otamme pian yhteyttä.',
     });
   } catch (err) {
     return NextResponse.json(
       {
         message:
-          'Något gick fel. Kontakta oss via email michaelaltinisik1@gmail.com eller ring 0725577888',
+          'Jotain meni pieleen. Ota yhteyttä sähköpostitse kari.alppi@gmail.com tai soita 040 77 06 163.',
       },
       { status: 500 }
     );

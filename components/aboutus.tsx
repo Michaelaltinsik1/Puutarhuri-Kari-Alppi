@@ -6,17 +6,20 @@ import { devices } from '@/utils/devices';
 interface AboutUsProps {
   headerHeight: number;
 }
-// scroll-margin-top: 214px;
-//{props => props.$inputColor || "#BF4F74"};
 const Wrapper = styled.div<{ $headerHeight?: number }>`
   background-color: ${colors.green};
   padding: 24px 16px;
   scroll-margin-top: ${(props) =>
     props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
+  @media (min-width: ${devices.tablet}) {
+    padding: 24px 40px;
+  }
+  @media (min-width: ${devices.laptop}) {
+    padding: 40px 80px;
+  }
   @media (min-width: ${devices.desktop}) {
-    display: flex;
-    justify-content: center;
-    padding: 64px;
+    align-items: center;
+    padding: 64px 180px;
   }
 `;
 const Container = styled.div`

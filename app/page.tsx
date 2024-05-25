@@ -5,14 +5,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import AboutUs from '@/components/aboutus';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
-import OpenHours from '@/components/openhours';
-import Payment from '@/components/payment';
 import Image from 'next/image';
 import { useState } from 'react';
 import Prices from '@/components/prices';
 import styled from 'styled-components';
-import Recipes from '@/components/recipes';
-import HeroMobile from '../public/HeroPuutarhuri.png';
+import HeroMobile from '../public/HeroPuutarhuri.jpg';
 import { ToastContainer } from 'react-toastify';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Title } from '@/styles/styles';
@@ -29,28 +26,37 @@ const ImageStyled = styled(Image)`
 const ContainerHero = styled.div`
   position: absolute;
   left: 50%;
-  top: 100px;
+  top: 40px;
   transform: translate(-50%, 0);
   background-color: rgb(250, 250, 250, 0.65);
   padding: 16px;
   border-radius: 8px;
   color: ${colors.gray_900};
+  min-width: 80%;
+  max-width: 716px;
+  @media (max-width: 330px) {
+    display: none;
+  }
   @media (min-width: ${devices.tablet}) {
-    top: 16px;
+    min-width: auto;
+    top: 50px;
   }
   @media (min-width: ${devices.laptop}) {
+    min-width: auto;
     padding: 32px;
-    top: 50px;
+    top: 150px;
   }
   @media (min-width: ${devices.desktop}) {
     padding: 40px;
-    top: 100px;
+    min-width: auto;
+    top: 193px;
   }
 `;
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   @media (min-width: ${devices.desktop}) {
+    justify-content: space-evenly;
     flex-direction: row;
   }
 `;
@@ -73,10 +79,10 @@ export default function Home() {
 
         <div style={{ position: 'relative' }}>
           <picture style={{ display: 'flex' }}>
-            <source media="(max-width: 767px)" srcSet="/HeroPuutarhuri.png" />
+            <source media="(max-width: 767px)" srcSet="/HeroPuutarhuri.jpg" />
             <source
               media="(min-width: 768px)"
-              srcSet="/HeroPuutarhurikarialppi.png"
+              srcSet="/HeroPuutarhurikarialppi.jpg"
             />
             <ImageStyled src={HeroMobile} alt="hero image" />
           </picture>

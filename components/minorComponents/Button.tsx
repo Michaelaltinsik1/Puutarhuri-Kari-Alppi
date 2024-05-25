@@ -16,8 +16,9 @@ interface ButtonProps {
 }
 
 const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
+  font-weight: bold;
   height: 52px;
-
+  cursor: pointer;
   font-size: 16px;
   border: 1px solid black;
   ${(props) =>
@@ -44,7 +45,7 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
     }}
     ${(props) =>
     props.$btnType === ButtonType.outlined && {
-      backgroundColor: 'transparent',
+      backgroundColor: colors.buttonOutlined,
       border: '1px solid black',
       minWidth: '100%',
       color: colors.gray_900,
@@ -56,14 +57,14 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
     }}
   &:hover {
     ${(props) =>
-      props.$btnType === ButtonType.submit && {
-        backgroundColor: colors.submitButtonHover,
+      props.$btnType === ButtonType.outlined && {
+        backgroundColor: colors.buttonOutlinedHover,
       }}
   }
   &:active {
     ${(props) =>
-      props.$btnType === ButtonType.submit && {
-        backgroundColor: colors.submitButtonActive,
+      props.$btnType === ButtonType.outlined && {
+        backgroundColor: colors.buttonOutlinedActive,
       }}
   }
 `;
