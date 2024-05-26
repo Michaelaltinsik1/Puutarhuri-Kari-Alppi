@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Puutarhuri Kari Alppi',
     description:
       'Tervetuloa puutarhaliikkeeseemme! Tutustu valikoimaamme. Aukioloajat, valikoima, tilaukset, tietoa meistä ja yhteystiedot löydät helposti sivustoltamme.',
-    url: 'https://puutarhuri-kari-alppi.vercel.app/',
+    url: 'https://puutarhurikarialppi.fi/',
     type: 'website',
   },
 };
