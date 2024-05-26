@@ -5,4 +5,4 @@ A frontend project were I use Next.js, TypeScript and Styled components. I creat
 In this project I also integrated Nodemailer to send email when the contact form is submitted. I also used Google's Recaptcha v3 to increase security and reduce fraud, bots and other automated attacks. Also the contact form be submitable if the recaptcha determines the user being malicious.
 
 <div><a href="https://www.figma.com/file/UKXQihXHvLkh6gwrBJRY98/Puutarhuri?type=design&node-id=0%3A1&mode=design&t=wPYMPAK4DNejmHxp-1" target="_blank" rel="noreferrer">Check out Figma here </a></div>
-<div><a href="https://puutarhuri-kari-alppi.vercel.app/" target="_blank" rel="noreferrer">Check out live site </a></div>
+<div><a href="https://puutarhurikarialppi.fi/" target="_blank" rel="noreferrer">Check out live site </a></div>
