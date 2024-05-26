@@ -6,7 +6,7 @@ import { ButtonType } from '@/components/minorComponents/Button';
 
 export const Title = styled.h1`
   color: ${colors.gray_900};
-  font-size: 32px;
+  font-size: 24px;
   line-height: 130%;
   font-family: var(--font-roboto);
   margin-bottom: 16px;
@@ -18,9 +18,8 @@ export const Title = styled.h1`
   }
   @media (min-width: ${devices.desktop}) {
     display: block;
-    font-size: 48px;
+    font-size: 36px;
     margin-right: 40px;
-    text-align: center;
   }
 `;
 

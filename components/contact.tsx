@@ -185,7 +185,7 @@ const Contact = ({ headerHeight }: ContactProps) => {
           name="name"
           register={register}
           label="Nimi"
-          placeholder=""
+          placeholder="Nimi"
           errors={errors.name?.message}
         />
         <InputField

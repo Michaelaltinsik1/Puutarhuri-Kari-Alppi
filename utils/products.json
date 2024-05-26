@@ -1,19 +1,26 @@
 [
-  {
-     "name":"Pensasmustikka",
-     "price":45,
-     "weight1:":"2.5 kg"
+   {
+      "url":"/parsa.jpg",
+      "alt":"Parsa",
+      "name":"Parsa",
+      "price":4.5,
+      "weight":"250 g",
+      "isInSeason": true
   },
   {
-     "name":"Parsa 1 lk",
-     "price":4.5,
-     "price2": 6,
-     "price3": 18,
-     "weight1:":"250 g",
-     "weight2:":"300 g",
-     "weight3:":"1 kg"
+      "url":"/dummy.jpg",
+      "alt":"Pensasmustikka tulossa",
+      "name":"Pensasmustikka",
+      "price":0,
+      "weight":"-",
+      "isInSeason": false
   },
   {
-   "name":"Vihannesten taimet"
+      "url":"/dummy.jpg",
+      "alt":"Vihannesten taimet tulossa",
+      "name":"Vihannesten taimet",
+      "price": 0,
+      "weight":"-",
+      "isInSeason": false
   }
 ]

@@ -41,19 +41,18 @@ const Container = styled.div`
   @media (min-width: ${devices.laptop}) {
     align-items: center;
     justify-content: center;
-    min-width: 75%;
+    //min-width: 75%;
   }
 `;
 const FooterHeading = styled(Subheading)`
+  min-width: 100%;
   margin-bottom: 0px;
   text-align: left;
   @media (min-width: ${devices.laptop}) {
-    min-width: 585px;
-    margin-bottom: 16px;
+    min-width: 860px;
   }
   @media (min-width: ${devices.desktop}) {
-    margin-bottom: 16px;
-    min-width: 700px;
+    min-width: 100%;
   }
 `;
 const NavContainer = styled.nav`
@@ -76,24 +75,27 @@ const ImageStyled = styled(Image)`
   }
   @media (min-width: ${devices.tablet}) {
     width: 100%;
-    margin: 24px auto;
+    // margin: 24px auto;
   }
   @media (min-width: ${devices.laptop}) {
-    max-width: 45vh;
+    max-width: 80vh;
     width: auto;
+    margin-right: 32px;
     //width: 100%;
-    margin: 0px 60px;
+    // margin: 0px 60px;
   }
 
   @media (min-width: ${devices.desktop}) {
     width: auto;
-    min-width: 500px;
-    margin: 0px 120px;
+    //min-width: 500px;
+    margin-right: 64px;
+    // margin: 0px 120px;
   }
 
   @media (min-width: ${devices.desktop}) and (max-width: 1550px) {
     width: auto;
-    margin: 0px 80px;
+    margin-right: 32px;
+    //margin: 0px 80px;
   }
 `;
 
@@ -116,7 +118,7 @@ const Footer = ({ headerHeight }: FooterProps) => {
 
           <NavStyled>
             <FooterLink href="#aboutUs">Yrityksestä</FooterLink>
-            <FooterLink href="#prices">Tuotteet ja hinnasto</FooterLink>
+            <FooterLink href="#prices">Tuotteet ja hinta</FooterLink>
           </NavStyled>
         </NavContainer>
       </Container>

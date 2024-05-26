@@ -18,7 +18,7 @@ const Container = ({ headerHeight }: ContainerTypes) => {
       <Image
         src="/hero.jpg"
         fill={true}
-        alt="Hero image with farm and a lake in the background with blue berries and asparagus"
+        alt="Hero image with farm and a lake in the background"
         priority
       />
     </ContainerStyled>

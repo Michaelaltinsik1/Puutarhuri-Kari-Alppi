@@ -26,41 +26,56 @@ const ImageStyled = styled(Image)`
 const ContainerHero = styled.div`
   position: absolute;
   left: 50%;
-  top: 40px;
+  top: 20px;
   transform: translate(-50%, 0);
   background-color: rgb(250, 250, 250, 0.65);
   padding: 16px;
   border-radius: 8px;
   color: ${colors.gray_900};
   min-width: 80%;
-  max-width: 716px;
+  max-width: 450px;
   @media (max-width: 330px) {
     display: none;
   }
   @media (min-width: ${devices.tablet}) {
     min-width: auto;
-    top: 50px;
+    top: 10px;
+  }
+  @media ((min-width: 769px) AND (max-width: 1000px)) {
+    min-width: auto;
+    padding: 32px;
+    top: 75px;
   }
   @media (min-width: ${devices.laptop}) {
     min-width: auto;
     padding: 32px;
-    top: 150px;
+    top: 20px;
   }
   @media (min-width: ${devices.desktop}) {
     padding: 40px;
     min-width: auto;
-    top: 193px;
+    top: 50px;
   }
 `;
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: ${devices.desktop}) {
-    justify-content: space-evenly;
-    flex-direction: row;
+`;
+const Button = styled(ButtonLink)`
+  margin-left: 0px;
+  margin-right: 0px;
+  &:nth-of-type(1) {
+    margin-right: 0px;
+  }
+  &:nth-of-type(2) {
+    margin-left: 0px;
+  }
+  @media (min-width: ${devices.laptop}) {
+    &:nth-of-type(1) {
+      margin-bottom: 8px;
+    }
   }
 `;
-
 export default function Home() {
   const [headerHeight, setHeaderHeight] = useState(0);
   const updateHeaderHeight = (newHeight: number) => {
@@ -79,9 +94,9 @@ export default function Home() {
 
         <div style={{ position: 'relative' }}>
           <picture style={{ display: 'flex' }}>
-            <source media="(max-width: 767px)" srcSet="/HeroPuutarhuri.jpg" />
+            <source media="(max-width: 1000px)" srcSet="/HeroPuutarhuri.jpg" />
             <source
-              media="(min-width: 768px)"
+              media="(min-width: 1001px)"
               srcSet="/HeroPuutarhurikarialppi.jpg"
             />
             <ImageStyled src={HeroMobile} alt="hero image" />
@@ -89,12 +104,12 @@ export default function Home() {
           <ContainerHero>
             <Title>Parsaa ja pensasmustikkaa Mahnalasta!</Title>
             <ButtonContainer>
-              <ButtonLink $btnType={ButtonType.outlined} href="#prices">
+              <Button $btnType={ButtonType.outlined} href="#prices">
                 Katso tarjonta ja saatavuus
-              </ButtonLink>
-              <ButtonLink $btnType={ButtonType.outlined} href="#contact">
+              </Button>
+              <Button $btnType={ButtonType.outlined} href="#contact">
                 Ota yhteyttä
-              </ButtonLink>
+              </Button>
             </ButtonContainer>
           </ContainerHero>
         </div>
