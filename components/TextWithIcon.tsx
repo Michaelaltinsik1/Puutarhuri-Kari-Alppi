@@ -21,7 +21,7 @@ const Container = styled.div`
 `;
 const TextWithIconStyled = styled.a<{ $isLocation?: boolean }>`
   display: flex;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 150%;
   color: ${colors.gray_900};
   align-items: center;

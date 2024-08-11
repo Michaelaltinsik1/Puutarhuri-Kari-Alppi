@@ -11,8 +11,8 @@ interface OpenHoursProps {
 }
 
 const DivStyled = styled.div<{ $headerHeight?: number }>`
-  scroll-margin-top: ${(props) =>
-    props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
+  /* scroll-margin-top: ${(props) =>
+    props.$headerHeight ? `${props.$headerHeight}px` : '0px'}; */
   background-color: ${colors.gray_50};
   padding: 24px 16px;
   @media (min-width: ${devices.desktop}) {

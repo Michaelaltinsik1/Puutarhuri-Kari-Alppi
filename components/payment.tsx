@@ -9,8 +9,8 @@ interface PaymentProps {
   headerHeight: number;
 }
 const Wrapper = styled.div<{ $headerHeight?: number }>`
-  scroll-margin-top: ${(props) =>
-    props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
+  /* scroll-margin-top: ${(props) =>
+    props.$headerHeight ? `${props.$headerHeight}px` : '0px'}; */
   background-color: ${colors.green};
   padding: 24px 16px;
   display: flex;

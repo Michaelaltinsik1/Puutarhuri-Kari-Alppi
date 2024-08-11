@@ -2,7 +2,6 @@ import { styled } from 'styled-components';
 import { colors } from '@/utils/colors';
 import { CopyRight, SecondaryHeading } from '@/styles/styles';
 
-import { FooterLink } from '@/styles/styles';
 import Image from 'next/image';
 import { devices } from '@/utils/devices';
 import mapMobile from '../public/MapMobile.jpg';
@@ -12,17 +11,12 @@ interface FooterProps {
   headerHeight: number;
 }
 
-const NavStyled = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
 const DivStyled = styled.div<{ $headerHeight?: number }>`
   display: flex;
   flex-direction: column;
-  background-color: ${colors.gray_50};
-  scroll-margin-top: ${(props) =>
-    props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
+  background-color: ${colors.blueBGNew};
+  /* scroll-margin-top: ${(props) =>
+    props.$headerHeight ? `${props.$headerHeight}px` : '0px'}; */
   padding: 24px 16px;
   @media (min-width: ${devices.tablet}) {
     padding: 24px 40px;
@@ -41,14 +35,15 @@ const Container = styled.div`
   @media (min-width: ${devices.laptop}) {
     align-items: center;
     justify-content: center;
-    //min-width: 75%;
   }
 `;
 const FooterHeading = styled(Subheading)`
+  color: ${colors.gray_900} !important;
   min-width: 100%;
   margin-bottom: 0px;
   text-align: left;
   @media (min-width: ${devices.laptop}) {
+    text-align: center;
     min-width: 860px;
   }
   @media (min-width: ${devices.desktop}) {
@@ -75,27 +70,21 @@ const ImageStyled = styled(Image)`
   }
   @media (min-width: ${devices.tablet}) {
     width: 100%;
-    // margin: 24px auto;
   }
   @media (min-width: ${devices.laptop}) {
     max-width: 80vh;
     width: auto;
     margin-right: 32px;
-    //width: 100%;
-    // margin: 0px 60px;
   }
 
   @media (min-width: ${devices.desktop}) {
     width: auto;
-    //min-width: 500px;
     margin-right: 64px;
-    // margin: 0px 120px;
   }
 
   @media (min-width: ${devices.desktop}) and (max-width: 1550px) {
     width: auto;
     margin-right: 32px;
-    //margin: 0px 80px;
   }
 `;
 
@@ -115,11 +104,6 @@ const Footer = ({ headerHeight }: FooterProps) => {
               <ImageStyled src={mapMobile} alt="Map to location" />
             </picture>
           </a>
-
-          <NavStyled>
-            <FooterLink href="#aboutUs">Yrityksestä</FooterLink>
-            <FooterLink href="#prices">Tuotteet ja hinta</FooterLink>
-          </NavStyled>
         </NavContainer>
       </Container>
       <CopyRight>

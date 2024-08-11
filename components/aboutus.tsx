@@ -1,16 +1,16 @@
 import { styled } from 'styled-components';
 import { colors } from '@/utils/colors';
-import { Body, SecondaryHeading } from '@/styles/styles';
 import { devices } from '@/utils/devices';
-
+import Card from './Card';
+import yrityksestä from '../public/Yrityksestä.jpg';
 interface AboutUsProps {
   headerHeight: number;
 }
 const Wrapper = styled.div<{ $headerHeight?: number }>`
-  background-color: ${colors.green};
+  background-color: ${colors.gray_50};
   padding: 24px 16px;
-  scroll-margin-top: ${(props) =>
-    props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
+  /* scroll-margin-top: ${(props) =>
+    props.$headerHeight ? `${props.$headerHeight}px` : '0px'}; */
   @media (min-width: ${devices.tablet}) {
     padding: 24px 40px;
   }
@@ -21,21 +21,23 @@ const Wrapper = styled.div<{ $headerHeight?: number }>`
     align-items: center;
     padding: 64px 180px;
   }
-`;
-const Container = styled.div`
-  @media (min-width: ${devices.desktop}) {
-    max-width: 50%;
+
+  & > div:first-of-type {
+    margin-top: 0px;
   }
 `;
+
 const AboutUs = ({ headerHeight }: AboutUsProps) => {
   return (
     <Wrapper $headerHeight={headerHeight - 1} id="aboutUs">
-      <Container>
-        <SecondaryHeading>Yrityksestä</SecondaryHeading>
-        <Body>
-          Sivustoamme päivitetään parhaillaan. Kiitos kärsivällisyydestä.
-        </Body>
-      </Container>
+      <Card
+        staticImage={yrityksestä}
+        alt="Yrityksestä"
+        body={[
+          'Viljelen parsaa ja pensasmustikkaa Mahnalassa Maisematien varrella.',
+          'Tuotteita on saatavilla sekä suoramyyntinä että tilauksesta',
+        ]}
+      />
     </Wrapper>
   );
 };

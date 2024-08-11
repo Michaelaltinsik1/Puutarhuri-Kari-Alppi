@@ -3,24 +3,40 @@
       "url":"/parsa.jpg",
       "alt":"Parsa",
       "name":"Parsa",
-      "price":4.5,
-      "weight":"250 g",
-      "isInSeason": true
+      "price":4,
+      "weight":"200g",
+      "isInSeason": true,
+      "showDiagonal":false,
+      "diagonalText":""
   },
   {
       "url":"/dummy.jpg",
       "alt":"Pensasmustikka tulossa",
       "name":"Pensasmustikka",
-      "price":0,
-      "weight":"-",
-      "isInSeason": false
+      "price":4.5,
+      "weight":"250g",
+      "isInSeason": false,
+      "showDiagonal":false,
+      "diagonalText":""
+  },
+  {
+    "url":"/dummy.jpg",
+    "alt":"Vihannesten taimet",
+    "name":"Vihannesten taimet",
+    "price": 0,
+    "weight":"-",
+    "isInSeason": false,
+    "showDiagonal": true,
+    "diagonalText":"Kesällä 2025"
   },
   {
       "url":"/dummy.jpg",
-      "alt":"Vihannesten taimet tulossa",
-      "name":"Vihannesten taimet",
+      "alt":"Yrtit",
+      "name":"Yrtit",
       "price": 0,
       "weight":"-",
-      "isInSeason": false
+      "isInSeason": false,
+      "showDiagonal": true,
+      "diagonalText":"Kesällä 2025"
   }
 ]

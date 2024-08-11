@@ -16,8 +16,8 @@ const DivStyled = styled.div<{ $headerHeight?: number }>`
   position: relative;
   display: flex;
   flex-direction: column;
-  scroll-margin-top: ${(props) =>
-    props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
+  /* scroll-margin-top: ${(props) =>
+    props.$headerHeight ? `${props.$headerHeight}px` : '0px'}; */
   background-color: ${colors.green};
   padding: 24px 16px;
   @media (min-width: ${devices.tablet}) {

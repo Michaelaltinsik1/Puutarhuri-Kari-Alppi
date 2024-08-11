@@ -40,9 +40,6 @@ const ButtonWrapper = styled.div`
     margin-bottom: 56px;
     flex-direction: row;
   }
-  /* @media (min-width: ${devices.desktopLarge}) {
-    margin-top: 128px;
-  } */
 `;
 
 const ButtonContainer = styled.div`

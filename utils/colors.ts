@@ -19,4 +19,7 @@ export enum colors {
   buttonOutlined = '#b2dfdb',
   buttonOutlinedHover = '#80cbc4',
   buttonOutlinedActive = '#4db6ac',
+  blueBGNew = '#dae3e8',
+  textNew = '#767277',
+  specialBG = '#caccc7',
 }

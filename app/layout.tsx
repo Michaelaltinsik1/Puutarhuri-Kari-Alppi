@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   title: 'Puutarhuri Kari Alppi',
   description:
-    'Tervetuloa puutarhaliikkeeseemme! Tutustu valikoimaamme. Aukioloajat, valikoima, tilaukset, tietoa meistä ja yhteystiedot löydät helposti sivustoltamme.',
+    'Tuoretta parsaa ja pensasmustikkaa Mahnalasta. Tutustu valikoimaamme ja ota yhteyttä',
   verification: {
     google: 'i3Xlc0YEXCnihK-y5aqZxVEDnxZJSR3H6Ov5L8ZGVCY',
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Puutarhuri Kari Alppi',
     siteName: 'Puutarhuri Kari Alppi',
     description:
-      'Tervetuloa puutarhaliikkeeseemme! Tutustu valikoimaamme. Aukioloajat, valikoima, tilaukset, tietoa meistä ja yhteystiedot löydät helposti sivustoltamme.',
+      'Tuoretta parsaa ja pensasmustikkaa Mahnalasta. Tutustu valikoimaamme ja ota yhteyttä',
     url: 'https://puutarhurikarialppi.fi/',
     type: 'website',
   },

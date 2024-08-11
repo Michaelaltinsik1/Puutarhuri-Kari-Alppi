@@ -5,7 +5,7 @@ import { devices } from '@/utils/devices';
 import { ButtonType } from '@/components/minorComponents/Button';
 
 export const Title = styled.h1`
-  color: ${colors.gray_900};
+  color: ${colors.textNew};
   font-size: 24px;
   line-height: 130%;
   font-family: var(--font-roboto);
@@ -13,18 +13,17 @@ export const Title = styled.h1`
   letter-spacing: -1px;
   @media (min-width: ${devices.tablet}) {
     display: block;
-    font-size: 40px;
-    //white-space: nowrap;
+    font-size: 32px;
   }
   @media (min-width: ${devices.desktop}) {
     display: block;
-    font-size: 36px;
+    font-size: 32px;
     margin-right: 40px;
   }
 `;
 
 export const SecondaryHeading = styled.h2`
-  color: ${colors.gray_900};
+  color: ${colors.textNew};
   font-size: 32px;
   line-height: 140%;
   letter-spacing: 0px;
@@ -41,11 +40,10 @@ export const SecondaryHeading = styled.h2`
 `;
 
 export const TertiaryHeading = styled.h3`
-  color: ${colors.gray_900};
-  font-size: 24px;
+  color: ${colors.textNew};
+  font-size: 20px;
   line-height: 140%;
   letter-spacing: 0px;
-  display: none;
   @media (min-width: ${devices.tablet}) {
     display: block;
   }
@@ -59,7 +57,7 @@ export const TertiaryHeading = styled.h3`
 `;
 
 export const Subheading = styled.p`
-  color: ${colors.gray_900};
+  color: ${colors.textNew};
   font-size: 24px;
   line-height: 140%;
   letter-spacing: 0px;
@@ -74,7 +72,7 @@ export const Subheading = styled.p`
   }
 `;
 export const Body = styled.p`
-  color: ${colors.gray_900};
+  color: ${colors.textNew};
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0px;
@@ -98,7 +96,7 @@ export const FooterLink = styled(Link)`
   width: 100%;
   text-align: center;
   display: inline-block;
-  color: ${colors.gray_900};
+  color: ${colors.textNew};
   text-decoration: underline;
   text-underline-offset: 8px;
   &:hover {
@@ -120,7 +118,7 @@ export const CopyRight = styled.p`
 export const NavLink = styled(Link)`
   box-sizing: border-box;
   white-space: nowrap;
-  color: ${colors.gray_900};
+  color: ${colors.textNew};
   font-size: 32px;
   line-height: 150%;
   letter-spacing: 0px;
@@ -145,7 +143,7 @@ export const NavLink = styled(Link)`
 
 export const ButtonLink = styled(Link)<{ $btnType: ButtonType }>`
   height: 52px;
-
+  font-family: var(--font-allura);
   font-size: 16px;
   font-weight: bold;
   border: 1px solid black;
@@ -172,7 +170,7 @@ export const ButtonLink = styled(Link)<{ $btnType: ButtonType }>`
   ${(props) =>
     props.$btnType === ButtonType.secondary && {
       backgroundColor: colors.buttonGreen,
-      color: colors.gray_900,
+      color: colors.textNew,
       borderRadius: '12px',
       marginTop: '8px',
       display: 'flex',
@@ -183,7 +181,7 @@ export const ButtonLink = styled(Link)<{ $btnType: ButtonType }>`
     props.$btnType === ButtonType.outlined && {
       backgroundColor: colors.buttonOutlined,
       border: '1px solid black',
-      color: colors.gray_900,
+      color: colors.textNew,
       borderRadius: '12px',
       marginTop: '8px',
       display: 'flex',

@@ -10,7 +10,7 @@ const ContainerStyled = styled.div<{ $headerHeight?: number }>`
   ${(props) =>
     props.$headerHeight && {
       height: `calc(100vh - ${props.$headerHeight}px)`,
-    }}//height: 80vh;
+    }}
 `;
 const Container = ({ headerHeight }: ContainerTypes) => {
   return (

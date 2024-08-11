@@ -9,7 +9,6 @@ import { SecondaryHeading, Subheading } from '@/styles/styles';
 import { Body } from '@/styles/styles';
 import TextWithIcon from './TextWithIcon';
 import { Icons } from './TextWithIcon';
-import { useState, useCallback } from 'react';
 import { sendEmail } from './minorComponents/email';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -44,31 +43,48 @@ const defaultValues = {
 };
 
 const DivStyled = styled.div<{ $headerHeight?: number }>`
-  display: grid;
-
-  grid-template-areas: 'title' 'contact' 'form';
-  background-color: ${colors.khabi};
-  scroll-margin-top: ${(props) =>
-    props.$headerHeight ? `${props.$headerHeight}px` : '0px'};
+  /* scroll-margin-top: ${(props) =>
+    props.$headerHeight ? `${props.$headerHeight}px` : '0px'}; */
+  background-color: ${colors.gray_50};
   padding: 24px 16px;
   @media (min-width: ${devices.tablet}) {
     padding: 24px 40px;
   }
   @media (min-width: ${devices.laptop}) {
-    grid-template-columns: 2fr 3fr;
-    grid-template-areas: 'title title' 'contact form';
     padding: 40px 80px;
-    flex-direction: row;
   }
   @media (min-width: ${devices.desktop}) {
     padding: 64px 180px;
   }
 `;
 const Container = styled.div`
-  grid-area: contact;
   margin-bottom: 24px;
+  background-color: ${colors.gray_50};
+  padding: 24px 16px;
+  border-radius: 5px;
   @media (min-width: ${devices.laptop}) {
+    padding: 24px 32px;
     margin-right: 160px;
+  }
+`;
+
+const Wrapper = styled.div`
+  background-color: ${colors.blueBGNew};
+  display: grid;
+  grid-template-areas: 'contact' 'form';
+  padding: 24px 16px;
+  border-radius: 5px;
+  @media (min-width: ${devices.laptop}) {
+    padding: 48px 40px;
+    grid-template-columns: 4fr 4fr;
+    grid-template-areas: 'contact form';
+  }
+`;
+
+const ContactInfoContainer = styled.div`
+  margin-top: 24px;
+  @media (min-width: ${devices.laptop}) {
+    margin-top: 40px;
   }
 `;
 
@@ -164,52 +180,56 @@ const Contact = ({ headerHeight }: ContactProps) => {
   return (
     <DivStyled $headerHeight={headerHeight - 1} id="contact">
       <SecondaryHeadingGrid>Yhteystiedot</SecondaryHeadingGrid>
-      <Container>
-        <Subheading>
-          Ottamalla yhteyttä varmistat saatavuuden ja saat vastauksen
-          kysymyksiisi. Pyrin vastaamaan viesteihin saman päivän aikana.
-        </Subheading>
-        <Subheading>
-          Avoinna sopimuksen mukaan.<br></br>Soitot klo 08 - 18.
-        </Subheading>
-        <TextWithIcon icon={Icons.phone} text="040 77 06 163" />
-        <TextWithIcon icon={Icons.email} text="kari.alppi@gmail.com" />
-        <TextWithIcon
-          url={googleMapsUrl}
-          icon={Icons.location}
-          text="Maisematie 618. Mahnala, 39100, Suomi"
-        />
-      </Container>
-      <Form onSubmit={onSubmit}>
-        <InputField
-          name="name"
-          register={register}
-          label="Nimi"
-          placeholder="Nimi"
-          errors={errors.name?.message}
-        />
-        <InputField
-          register={register}
-          name="email"
-          label="Sähköpostiosoite"
-          placeholder="nimi.sukunimi@gmail.com"
-          errors={errors.email?.message}
-        />
-        <TextArea
-          errors={errors.message?.message}
-          register={register}
-          name="message"
-          label="Viesti"
-          placeholder="Mitä sinulla on mielessäsi?"
-        />
-        <Button
-          type="submit"
-          isSubmitting={isSubmitting}
-          btnType={ButtonType.outlined}
-        >
-          {isSubmitting ? <Loader /> : 'Lähetä viesti'}
-        </Button>
-      </Form>
+      <Wrapper>
+        <Container>
+          <Body>
+            Ottamalla yhteyttä varmistat saatavuuden ja saat vastauksen
+            kysymyksiisi. Pyrin vastaamaan viesteihin saman päivän aikana.
+          </Body>
+          <Body>
+            Avoinna sopimuksen mukaan.<br></br>Soitot klo 08 - 18.
+          </Body>
+          <ContactInfoContainer>
+            <TextWithIcon icon={Icons.phone} text="040 77 06 163" />
+            <TextWithIcon icon={Icons.email} text="kari.alppi@gmail.com" />
+            <TextWithIcon
+              url={googleMapsUrl}
+              icon={Icons.location}
+              text="Maisematie 618. Mahnala, 39100, Suomi"
+            />
+          </ContactInfoContainer>
+        </Container>
+        <Form onSubmit={onSubmit}>
+          <InputField
+            name="name"
+            register={register}
+            label="Nimi"
+            placeholder="Nimi"
+            errors={errors.name?.message}
+          />
+          <InputField
+            register={register}
+            name="email"
+            label="Sähköpostiosoite"
+            placeholder="nimi.sukunimi@gmail.com"
+            errors={errors.email?.message}
+          />
+          <TextArea
+            errors={errors.message?.message}
+            register={register}
+            name="message"
+            label="Viesti"
+            placeholder="Mitä sinulla on mielessäsi?"
+          />
+          <Button
+            type="submit"
+            isSubmitting={isSubmitting}
+            btnType={ButtonType.outlined}
+          >
+            {isSubmitting ? <Loader /> : 'Lähetä viesti'}
+          </Button>
+        </Form>
+      </Wrapper>
     </DivStyled>
   );
 };

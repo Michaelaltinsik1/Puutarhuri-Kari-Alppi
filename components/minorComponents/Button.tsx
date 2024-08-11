@@ -26,7 +26,7 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
       backgroundColor: colors.submitButton,
       minWidth: '100%',
       color: colors.gray_50,
-      borderRadius: '12px',
+      borderRadius: '6px',
       marginTop: '8px',
       display: 'flex',
       alignItems: 'center',
@@ -37,7 +37,7 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
       backgroundColor: colors.buttonGreen,
       minWidth: '100%',
       color: colors.gray_900,
-      borderRadius: '12px',
+      borderRadius: '6px',
       marginTop: '8px',
       display: 'flex',
       alignItems: 'center',
@@ -45,11 +45,11 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
     }}
     ${(props) =>
     props.$btnType === ButtonType.outlined && {
-      backgroundColor: colors.buttonOutlined,
+      backgroundColor: colors.specialBG,
       border: '1px solid black',
       minWidth: '100%',
       color: colors.gray_900,
-      borderRadius: '12px',
+      borderRadius: '6px',
       marginTop: '8px',
       display: 'flex',
       alignItems: 'center',
@@ -58,13 +58,13 @@ const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
   &:hover {
     ${(props) =>
       props.$btnType === ButtonType.outlined && {
-        backgroundColor: colors.buttonOutlinedHover,
+        backgroundColor: '#c4c6c1',
       }}
   }
   &:active {
     ${(props) =>
       props.$btnType === ButtonType.outlined && {
-        backgroundColor: colors.buttonOutlinedActive,
+        backgroundColor: '#bec0ba',
       }}
   }
 `;
