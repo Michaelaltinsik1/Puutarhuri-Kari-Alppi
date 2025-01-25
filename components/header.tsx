@@ -204,6 +204,11 @@ const Header = () => {
             </NavLink>
           </ListItem>
           <ListItem>
+            <NavLink onClick={closeMenu} href="#reko">
+              Reko
+            </NavLink>
+          </ListItem>
+          <ListItem>
             <NavLink
               style={{ pointerEvents: 'none', opacity: '0.5' }}
               onClick={closeMenu}

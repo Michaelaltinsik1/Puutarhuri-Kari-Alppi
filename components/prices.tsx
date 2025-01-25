@@ -104,6 +104,20 @@ const Prices = ({ headerHeight }: PricesProps) => {
           'Yrtit: mm. basilika, timjami, rosmariini, tilli Vihannesten taimet: mm. tomaatti, kurkku, chilipaprika',
         ]}
         isProductCard={true}
+        hasAdditionalInfo={true}
+        additionalInfoTitle="Viljelyssä 2025"
+        additionalInfoBody={[
+          { isBodyHeader: true, text: 'Vihannesten taimet:' },
+          {
+            isBodyHeader: false,
+            text: 'tomatti, chilipaprika, kesäkurpitsa, kurkku, pinaatti, selleri',
+          },
+          { isBodyHeader: true, text: 'Yrtit: ' },
+          {
+            isBodyHeader: false,
+            text: 'basilika, timjani, rosmariini, laventeli, oregano, kurkkuyrtti, salvia, sitruunamelissa, viinisuolaheinä, korianteri, rucola, kiinankaali, stevia',
+          },
+        ]}
       />
       <SecondaryHeading style={{ color: `${colors.gray_900}` }}>
         Hinnasto

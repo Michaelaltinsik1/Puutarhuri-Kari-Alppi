@@ -51,9 +51,6 @@ const ListItemContainer = styled.ul`
   @media (min-width: ${devices.laptop}) {
     margin: 0 32px;
   }
-  @media (min-width: ${devices.desktop}) {
-    padding: 0 40px;
-  }
 `;
 
 const ListImageContainer = styled.div`

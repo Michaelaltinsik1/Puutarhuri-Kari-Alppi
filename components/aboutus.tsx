@@ -33,6 +33,7 @@ const AboutUs = ({ headerHeight }: AboutUsProps) => {
       <Card
         staticImage={yrityksestä}
         alt="Yrityksestä"
+        shouldCenterMainCardInfo={true}
         body={[
           'Viljelen parsaa ja pensasmustikkaa Mahnalassa Maisematien varrella.',
           'Tuotteita on saatavilla sekä suoramyyntinä että tilauksesta',

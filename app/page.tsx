@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { colors } from '@/utils/colors';
 import { devices } from '@/utils/devices';
-
+import Reko from '@/components/Reko';
 import { libre_baskerville } from '../app/fonts';
 
 const ContainerHero = styled.div`
@@ -67,6 +67,7 @@ export default function Home() {
         <Header />
         <AboutUs headerHeight={headerHeight} />
         <Prices headerHeight={headerHeight} />
+        <Reko headerHeight={headerHeight} />
         <Contact headerHeight={headerHeight} />
         <Footer headerHeight={headerHeight} />
         <ToastContainer />

@@ -5,19 +5,29 @@ import { allura } from '../app/fonts';
 import { devices } from '@/utils/devices';
 import { colors } from '@/utils/colors';
 import { NavLink } from '@/styles/styles';
+
+interface IadditionalInfoBody {
+  text: string;
+  isBodyHeader: boolean;
+}
 interface Card {
   staticImage: StaticImageData;
   alt: string;
   title?: string;
   body: Array<string>;
   isProductCard?: boolean;
+  hasAdditionalInfo?: boolean;
+  additionalInfoTitle?: string;
+  additionalInfoBody?: Array<IadditionalInfoBody>;
+  shouldCenterMainCardInfo?: boolean;
 }
 
 const CardContainer = styled.div<{ $isProductCard?: boolean }>`
   display: flex;
   flex-direction: column;
   padding: 16px;
-  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
   ${(props) =>
     props?.$isProductCard
       ? {
@@ -38,7 +48,6 @@ const CardContainer = styled.div<{ $isProductCard?: boolean }>`
   }
   @media (min-width: ${devices.laptop}) {
     max-width: none;
-    flex-direction: row;
     padding: 48px 56px;
   }
 `;
@@ -110,38 +119,123 @@ const TertiaryHeadingCard = styled(TertiaryHeading)`
     margin-bottom: 32px;
   }
 `;
+
+const InnerCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: ${devices.laptop}) {
+    flex-direction: row;
+  }
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const AdditionalInformationContainer = styled.div<{ $isProductCard?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  padding: 16px 24px;
+  ${(props) =>
+    props?.$isProductCard
+      ? {
+          backgroundColor: `${colors.blueBGNew}`,
+        }
+      : { backgroundColor: `${colors.gray_50}`, alignItems: 'center' }}
+  margin-top: 20px;
+  @media (min-width: ${devices.laptop}) {
+    max-width: none;
+    padding: 32px 40px;
+    margin-top: 32px;
+  }
+`;
+
+const SubheadingCardAdditional = styled(Subheading)`
+  margin-bottom: 16px;
+  text-align: center;
+`;
+
+const AdditionalBody = styled(Body)`
+  text-align: center;
+`;
+
+const AdditionalBodyHeader = styled(AdditionalBody)`
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: bold;
+`;
+
+const MainCardInfo = styled(AdditionalBody)<{
+  $shouldCenterMainCardInfo?: boolean;
+}>`
+  ${(props) =>
+    props?.$shouldCenterMainCardInfo && {
+      marginBottom: 'auto',
+      marginTop: 'auto',
+    }}
+`;
 const Card = ({
   staticImage,
   alt,
   title,
   body,
   isProductCard = false,
+  additionalInfoBody = [],
+  hasAdditionalInfo = false,
+  additionalInfoTitle = '',
+  shouldCenterMainCardInfo,
 }: Card) => {
+  function getAdditionalBodyTag(bodyText: IadditionalInfoBody) {
+    if (bodyText.isBodyHeader) {
+      return (
+        <AdditionalBodyHeader key={bodyText.text}>
+          {bodyText.text}
+        </AdditionalBodyHeader>
+      );
+    }
+    return <AdditionalBody key={bodyText.text}>{bodyText.text}</AdditionalBody>;
+  }
   return (
     <CardContainer $isProductCard={isProductCard}>
-      <ImageStyled src={staticImage} alt={alt} />
-      <div>
-        {title && (
-          <TertiaryHeadingCard className={allura.className}>
-            {title}
-          </TertiaryHeadingCard>
-        )}
-        {body.map((paragraph) => (
-          <BodyCard $isProductCard={isProductCard} key={paragraph}>
-            {paragraph}
-          </BodyCard>
-        ))}
-        {!isProductCard && (
-          <LinksContainer>
-            <NavLinkCard href="#prices" className={allura.className}>
-              Tuotteet ja hinnasto
-            </NavLinkCard>
-            <NavLinkCard href="#contact" className={allura.className}>
-              Ota yhteyttä
-            </NavLinkCard>
-          </LinksContainer>
-        )}
-      </div>
+      <InnerCardContainer>
+        <ImageStyled src={staticImage} alt={alt} />
+        <MainCardInfo $shouldCenterMainCardInfo={shouldCenterMainCardInfo}>
+          {title && (
+            <TertiaryHeadingCard className={allura.className}>
+              {title}
+            </TertiaryHeadingCard>
+          )}
+          {body.map((paragraph) => (
+            <BodyCard $isProductCard={isProductCard} key={paragraph}>
+              {paragraph}
+            </BodyCard>
+          ))}
+          {!isProductCard && (
+            <LinksContainer>
+              <NavLinkCard href="#prices" className={allura.className}>
+                Tuotteet ja hinnasto
+              </NavLinkCard>
+              <NavLinkCard href="#contact" className={allura.className}>
+                Ota yhteyttä
+              </NavLinkCard>
+            </LinksContainer>
+          )}
+        </MainCardInfo>
+      </InnerCardContainer>
+      {hasAdditionalInfo && (
+        <AdditionalInformationContainer $isProductCard={isProductCard}>
+          {additionalInfoTitle && (
+            <SubheadingCardAdditional>
+              {additionalInfoTitle}
+            </SubheadingCardAdditional>
+          )}
+          {additionalInfoBody.map((additionalInfo) =>
+            getAdditionalBodyTag(additionalInfo)
+          )}
+        </AdditionalInformationContainer>
+      )}
     </CardContainer>
   );
 };
