@@ -81,7 +81,7 @@ const WaysOfWorking = () => {
       <ListImageContainer>
         <ListItemContainer>
           {WaysOfWorkingList.map((WaysOfWorkingItem) => (
-            <ListItem>{WaysOfWorkingItem}</ListItem>
+            <ListItem key={WaysOfWorkingItem}>{WaysOfWorkingItem}</ListItem>
           ))}
         </ListItemContainer>
         <ImageContainer>
