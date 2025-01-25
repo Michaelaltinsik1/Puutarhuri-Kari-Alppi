@@ -1,42 +1,42 @@
 [
-   {
-      "url":"/parsa.jpg",
-      "alt":"Parsa",
-      "name":"Parsa",
-      "price":4,
-      "weight":"200g",
-      "isInSeason": true,
-      "showDiagonal":false,
-      "diagonalText":""
-  },
   {
-      "url":"/mustikka.jpg",
-      "alt":"Pensasmustikka",
-      "name":"Pensasmustikka",
-      "price":4.5,
-      "weight":"250g",
-      "isInSeason": false,
-      "showDiagonal":false,
-      "diagonalText":""
-  },
-  {
-    "url":"/dummy.jpg",
-    "alt":"Vihannesten taimet",
-    "name":"Vihannesten taimet",
+    "url": "/parsa.jpg",
+    "alt": "Parsa",
+    "name": "Parsa",
     "price": 0,
-    "weight":"-",
+    "weight": "200g",
+    "isInSeason": true,
+    "showDiagonal": false,
+    "diagonalText": ""
+  },
+  {
+    "url": "/mustikka.jpg",
+    "alt": "Pensasmustikka",
+    "name": "Pensasmustikka",
+    "price": 0,
+    "weight": "250g",
+    "isInSeason": false,
+    "showDiagonal": false,
+    "diagonalText": ""
+  },
+  {
+    "url": "/dummy.jpg",
+    "alt": "Vihannesten taimet",
+    "name": "Vihannesten taimet",
+    "price": 0,
+    "weight": "-",
     "isInSeason": false,
     "showDiagonal": true,
-    "diagonalText":"Kesällä 2025"
+    "diagonalText": "Kesällä 2025"
   },
   {
-      "url":"/dummy.jpg",
-      "alt":"Yrtit",
-      "name":"Yrtit",
-      "price": 0,
-      "weight":"-",
-      "isInSeason": false,
-      "showDiagonal": true,
-      "diagonalText":"Kesällä 2025"
+    "url": "/dummy.jpg",
+    "alt": "Yrtit",
+    "name": "Yrtit",
+    "price": 0,
+    "weight": "-",
+    "isInSeason": false,
+    "showDiagonal": true,
+    "diagonalText": "Kesällä 2025"
   }
 ]

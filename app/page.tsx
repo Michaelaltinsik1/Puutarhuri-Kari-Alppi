@@ -13,7 +13,6 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { colors } from '@/utils/colors';
 import { devices } from '@/utils/devices';
 
-import { ButtonLink } from '@/styles/styles';
 import { libre_baskerville } from '../app/fonts';
 
 const ContainerHero = styled.div`

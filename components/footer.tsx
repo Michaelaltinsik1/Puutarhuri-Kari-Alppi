@@ -6,7 +6,8 @@ import Image from 'next/image';
 import { devices } from '@/utils/devices';
 import mapMobile from '../public/MapMobile.jpg';
 import { Subheading } from '@/styles/styles';
-
+import SocialMedia from './SocialMedia';
+import WaysOfWorking from './WaysOfWorking';
 interface FooterProps {
   headerHeight: number;
 }
@@ -93,23 +94,27 @@ const Footer = ({ headerHeight }: FooterProps) => {
   const destinationLng = 23.286892840078547;
   const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}`;
   return (
-    <DivStyled $headerHeight={headerHeight - 1} id="footer">
-      <Container>
-        <FooterHeading>Katso tästa ajo-ohjeet.</FooterHeading>
-        <NavContainer>
-          <a href={googleMapsUrl} target="_blank">
-            <picture style={{ display: 'flex' }}>
-              <source media="(max-width: 767px)" srcSet="/MapMobile.jpg" />
-              <source media="(min-width: 768px)" srcSet="/MapDesktop.jpg" />
-              <ImageStyled src={mapMobile} alt="Map to location" />
-            </picture>
-          </a>
-        </NavContainer>
-      </Container>
-      <CopyRight>
-        &copy; Puutarhuri Kari Alppi. Kaikki oikeudet pidätetään.
-      </CopyRight>
-    </DivStyled>
+    <>
+      <DivStyled $headerHeight={headerHeight - 1} id="footer">
+        <Container>
+          <FooterHeading>Katso tästa ajo-ohjeet.</FooterHeading>
+          <NavContainer>
+            <a href={googleMapsUrl} target="_blank">
+              <picture style={{ display: 'flex' }}>
+                <source media="(max-width: 767px)" srcSet="/MapMobile.jpg" />
+                <source media="(min-width: 768px)" srcSet="/MapDesktop.jpg" />
+                <ImageStyled src={mapMobile} alt="Map to location" />
+              </picture>
+            </a>
+          </NavContainer>
+        </Container>
+        <SocialMedia />
+        <CopyRight>
+          &copy; Puutarhuri Kari Alppi. Kaikki oikeudet pidätetään.
+        </CopyRight>
+      </DivStyled>
+      <WaysOfWorking />
+    </>
   );
 };
 

@@ -22,4 +22,5 @@ export enum colors {
   blueBGNew = '#dae3e8',
   textNew = '#767277',
   specialBG = '#caccc7',
+  waysOfWorkingBG = '#c0d5d5',
 }

@@ -141,6 +141,15 @@ export const NavLink = styled(Link)`
   }
 `;
 
+export const SocialsHeading = styled.h2`
+  line-height: 140%;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 16px;
+  font-family: var(--font-allura);
+  color: ${colors.gray_900};
+`;
 export const ButtonLink = styled(Link)<{ $btnType: ButtonType }>`
   height: 52px;
   font-family: var(--font-allura);
