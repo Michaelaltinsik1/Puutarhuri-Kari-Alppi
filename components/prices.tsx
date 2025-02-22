@@ -105,7 +105,7 @@ const Prices = ({ headerHeight }: PricesProps) => {
         title="Parsa"
         body={[
           'Parsan satokausi käynnistyy toukokuun puolivälissä ja se kestää noin neljä viikkoa.',
-          'Mikäli haluat nauttia parsoista myös satokauden ulkopuolella, parsaa voi pakastaa tuoreena ihan sellaisenaan',
+          'Mikäli haluat nauttia parsoista myös satokauden ulkopuolella, parsaa voi pakastaa tuoreena ihan sellaisenaan.',
         ]}
         isProductCard={true}
       />

@@ -171,8 +171,7 @@ const Reko = ({ headerHeight }: RekoProps) => {
           reuna) klo 18.30 - 19.00
         </StyledBody>
         <StyledBody>
-          - <BoldSpan>Hämeenkyrö</BoldSpan> (KyröskoskenTori, CM parkkipaikka)
-          klo 19.30 - 20.00
+          - <BoldSpan>Hämeenkyrö</BoldSpan> (Kyröskosken tori) klo 19.30 - 20.00
         </StyledBody>
         <SocialsContainer>
           <a
