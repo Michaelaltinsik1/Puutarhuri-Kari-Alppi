@@ -10,6 +10,9 @@ import yrityksestä from '../public/Yrityksestä.jpg';
 import TuotteetMustikka from '../public/TuotteetMustikka.jpg';
 import TuotteetParsa from '../public/TuotteetParsa.jpg';
 import TuotteetDummy from '../public/TuotteetDummy.jpg';
+import branchesLeft from '../public/branches-left.png';
+import branchesRight from '../public/branches-right.png';
+import Image from 'next/image';
 interface PricesProps {
   headerHeight: number;
 }
@@ -60,13 +63,34 @@ const CardsWrapper = styled.div`
 
 const SubheadingPrices = styled(SecondaryHeading)`
   margin: 0 auto;
-  margin-top: 20px;
   text-align: center;
   font-size: 24px;
+  margin-left: 16px;
+  margin-right: 16px;
   @media (min-width: ${devices.desktop}) {
-    margin-top: 40px;
     max-width: 70%;
     font-size: 32px;
+  }
+`;
+
+const BranchesContainer = styled.div`
+  display: flex;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  align-items: center;
+  @media (min-width: ${devices.desktop}) {
+    margin-top: 40px;
+  }
+`;
+
+const StyledBranches = styled(Image)`
+  width: 53px;
+  height: 80px;
+  @media (min-width: ${devices.laptop}) {
+    width: 100px;
+    height: 150px;
   }
 `;
 const Prices = ({ headerHeight }: PricesProps) => {
@@ -141,9 +165,13 @@ const Prices = ({ headerHeight }: PricesProps) => {
             />
           ))}
         </CardsContainer>
-        <SubheadingPrices>
-          Varmista saatavuus aina etukäteen ottamalla ensin yhteyttä!
-        </SubheadingPrices>
+        <BranchesContainer>
+          <StyledBranches src={branchesLeft} alt="branches Left" />
+          <SubheadingPrices>
+            Varmista saatavuus aina etukäteen ottamalla ensin yhteyttä!
+          </SubheadingPrices>
+          <StyledBranches src={branchesRight} alt="branches Right" />
+        </BranchesContainer>
       </CardsWrapper>
     </DivStyled>
   );

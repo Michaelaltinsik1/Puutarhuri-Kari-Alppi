@@ -119,7 +119,7 @@ export const NavLink = styled(Link)`
   box-sizing: border-box;
   white-space: nowrap;
   color: ${colors.textNew};
-  font-size: 32px;
+  font-size: 28px;
   line-height: 150%;
   letter-spacing: 0px;
   width: 100%;

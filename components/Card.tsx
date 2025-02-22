@@ -111,7 +111,7 @@ const LinksContainer = styled.div`
   }
 `;
 
-const TertiaryHeadingCard = styled(TertiaryHeading)`
+const TertiaryHeadingCard = styled(Body)`
   font-size: 32px;
   margin-bottom: 24px;
   @media (min-width: ${devices.laptop}) {
@@ -156,10 +156,14 @@ const SubheadingCardAdditional = styled(Subheading)`
   text-align: center;
 `;
 
-const AdditionalBody = styled(Body)`
+const AdditionalBody = styled.div`
   text-align: center;
+  color: ${colors.textNew};
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  margin-bottom: 16px;
 `;
-
 const AdditionalBodyHeader = styled(AdditionalBody)`
   font-size: 20px;
   text-decoration: underline;

@@ -50,6 +50,16 @@ const ContainerHero = styled.div`
   }
 `;
 
+const Container = styled.div`
+  max-width: 1920px;
+`;
+
+const MainContainer = styled.main`
+  background-color: ${colors.gray_50};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 export default function Home() {
   const [headerHeight, setHeaderHeight] = useState(0);
   // const updateHeaderHeight = (newHeight: number) => {
@@ -63,15 +73,17 @@ export default function Home() {
 
   return (
     <GoogleReCaptchaProvider reCaptchaKey={siteKey} language="fi">
-      <main className={libre_baskerville.className}>
-        <Header />
-        <AboutUs headerHeight={headerHeight} />
-        <Prices headerHeight={headerHeight} />
-        <Reko headerHeight={headerHeight} />
-        <Contact headerHeight={headerHeight} />
-        <Footer headerHeight={headerHeight} />
-        <ToastContainer />
-      </main>
+      <MainContainer className={libre_baskerville.className}>
+        <Container>
+          <Header />
+          <AboutUs headerHeight={headerHeight} />
+          <Prices headerHeight={headerHeight} />
+          <Reko headerHeight={headerHeight} />
+          <Contact headerHeight={headerHeight} />
+          <Footer headerHeight={headerHeight} />
+          <ToastContainer />
+        </Container>
+      </MainContainer>
     </GoogleReCaptchaProvider>
   );
 }
