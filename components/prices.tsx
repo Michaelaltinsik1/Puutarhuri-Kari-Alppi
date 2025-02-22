@@ -17,7 +17,7 @@ interface ProductCardType {
   url: string;
   alt: string;
   name: string;
-  price: number;
+  price: string;
   weight: string;
 }
 const DivStyled = styled.div<{ $headerHeight?: number }>`
@@ -80,8 +80,8 @@ const Prices = ({ headerHeight }: PricesProps) => {
         alt="Parsa"
         title="Parsa"
         body={[
-          'Parsan satokausi käynnistyy toukokuun puolivälissä ja se kestää noin kolme viikkoa (kesällä 2025).',
-          'Myyn parsat aina samana aamuna kerättynä.',
+          'Parsan satokausi käynnistyy toukokuun puolivälissä ja se kestää noin neljä viikkoa.',
+          'Mikäli haluat nauttia parsoista myös satokauden ulkopuolella, parsaa voi pakastaa tuoreena ihan sellaisenaan',
         ]}
         isProductCard={true}
       />
@@ -91,7 +91,8 @@ const Prices = ({ headerHeight }: PricesProps) => {
         title="Pensasmustikka"
         body={[
           'Pensasmustikat kypsyvät elo-syyskuun aikana. Koska taimet ovat vielä nuoria, pensasmustikkaa on toistaiseksi tarjolla vielä rajallisesti.',
-          'Viljelyssä olevien lajikkeiden marjat ovat suurikokoisia. Marjat säilyvät hyvin sekä tuoreena että pakastettuna.',
+          'Viljelyssä olevien lajikkeiden marjat ovat suurikokoisia.',
+          'Marjat säilyvät jääkaapissa jopa 2-3 viikkoa. Pensasmustikka on myös erinomainen pakastemarja.',
         ]}
         isProductCard={true}
       />
@@ -100,12 +101,12 @@ const Prices = ({ headerHeight }: PricesProps) => {
         alt="Yritit ja vihannesten taimet"
         title="Yritit ja vihannesten taimet"
         body={[
-          'Kasvatan myös yrttien ja vihannesten taimia jatkokasvatukseen. Voit kasvattaa taimia pihallasi tai parvekkeellasi. Taimien valikoima vaihtelee vuosittain ja saatavuus on rajallinen. Seuraavan kesän (2025) taimivalikoima ilmestyy sivuillemme kevään 2025 aikana.',
-          'Yrtit: mm. basilika, timjami, rosmariini, tilli Vihannesten taimet: mm. tomaatti, kurkku, chilipaprika',
+          'Kasvatan myös yrttien ja vihannesten taimia jatkokasvatukseen. Voit kasvattaa taimia pihallasi tai parvekkeellasi. Taimien valikoima vaihtelee vuosittain ja saatavuus on rajallinen.',
+          'Kesän taimivalikoima ilmestyy sivuillemme aina edeltävän kevään aikana.',
         ]}
         isProductCard={true}
         hasAdditionalInfo={true}
-        additionalInfoTitle="Viljelyssä 2025"
+        additionalInfoTitle="Kesän 2025 taimivalikoima:"
         additionalInfoBody={[
           { isBodyHeader: true, text: 'Vihannesten taimet:' },
           {

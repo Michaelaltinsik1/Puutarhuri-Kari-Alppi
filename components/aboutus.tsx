@@ -36,7 +36,7 @@ const AboutUs = ({ headerHeight }: AboutUsProps) => {
         shouldCenterMainCardInfo={true}
         body={[
           'Viljelen parsaa ja pensasmustikkaa Mahnalassa Maisematien varrella.',
-          'Tuotteita on saatavilla sekä suoramyyntinä että tilauksesta',
+          'Tuotteita on saatavilla sekä suoramyyntinä että tilauksesta. Kierrän myös lähialueen REKO-lähiruokaringeissä.',
         ]}
       />
     </Wrapper>

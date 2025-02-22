@@ -183,8 +183,8 @@ const Contact = ({ headerHeight }: ContactProps) => {
       <Wrapper>
         <Container>
           <Body>
-            Ottamalla yhteyttä varmistat saatavuuden ja saat vastauksen
-            kysymyksiisi. Pyrin vastaamaan viesteihin saman päivän aikana.
+            Ottamalla yhteyttä varmistat saatavuuden. Voit kysyä saatavuutta ja
+            tehdä tilauksen vieressä olevan lomakkeen kautta.
           </Body>
           <Body>
             Avoinna sopimuksen mukaan.<br></br>Soitot klo 08 - 18.
@@ -195,7 +195,7 @@ const Contact = ({ headerHeight }: ContactProps) => {
             <TextWithIcon
               url={googleMapsUrl}
               icon={Icons.location}
-              text="Maisematie 618. Mahnala, 39100, Suomi"
+              text="Maisematie 618, 39100 Hämeenkyrö"
             />
           </ContactInfoContainer>
         </Container>

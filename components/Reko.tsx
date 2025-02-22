@@ -116,21 +116,23 @@ const Reko = ({ headerHeight }: RekoProps) => {
         />
         <StyledTertiaryHeading>Reko</StyledTertiaryHeading>
         <StyledBody>
-          Olen mukana lähiruoan myynti - ja jakelumalli REKO:ssa.
+          Olen mukana lähiruoan myynti- ja jakelumalli REKO:ssa.
         </StyledBody>
         <StyledBody>
           REKO:ssa asiakkaat voivat tilata lähiruokaa suoraan tuottajilta ilman
           välikäsiä.
         </StyledBody>
         <StyledBody>
-          REKO-renkaat toimivat Facebookissa suljettuia ryhminä, joissa jäsenet
-          tekevättilauksia ja sopivat toimituksista. Tilausten toimitus ja nuoto
-          tapahtuvat etukäteen sovittuna REKO-päivänä, joka ilmoitetaan ryhmän
-          Facebook-seinällä. Jakopäivät ja - ajat löytyvät ryhmän tiedoista.
-          Huomioithan, että Facebookiin tehty tilaus on sitova ostos, joten
-          muista noutaa tilaamasi tuotteet.
+          REKO-renkaat toimivat Facebookissa suljettuina ryhminä, joissa jäsenet
+          tekevät tilauksia ja sopivat toimituksista. Tilausten toimitus ja
+          nouto tapahtuvat etukäteen sovittuna REKO-päivänä, joka ilmoitetaan
+          ryhmän Facebook-seinällä. Jakopäivät ja -ajat löytyvät ryhmän
+          tiedoista. Huomioithan, että Facebookiin tehty tilaus on sitova ostos,
+          joten muista noutaa tilaamasi tuotteet.
         </StyledBody>
-        <StyledBody>Maksutapoina käy sekä kortti että käteinen.</StyledBody>
+        <StyledBody>
+          Maksutapoina hyväksytään sekä kortti että käteinen.
+        </StyledBody>
       </RekoContainer>
 
       <RekoContainer>

@@ -23,7 +23,7 @@ const LastLink = styled.a`
 const SocialMedia = () => {
   return (
     <Container>
-      <SocialsHeading>Seuraa minua somessa!</SocialsHeading>
+      <SocialsHeading>Somekanavani</SocialsHeading>
       <div>
         <FirstLink
           href="https://www.facebook.com/profile.php?id=61571253035478"
