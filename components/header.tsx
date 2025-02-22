@@ -205,7 +205,7 @@ const Header = () => {
           </ListItem>
           <ListItem>
             <NavLink onClick={closeMenu} href="#reko">
-              REKO - lähiruokarinki
+              REKO
             </NavLink>
           </ListItem>
           <ListItem>

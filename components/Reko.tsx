@@ -105,7 +105,7 @@ const Reko = ({ headerHeight }: RekoProps) => {
   return (
     <DivStyled $headerHeight={headerHeight - 1} id="reko">
       <SecondaryHeading style={{ color: `${colors.gray_900}` }}>
-        REKO-lähiruokarinki
+        REKO - lähiruokarinki
       </SecondaryHeading>
       <RekoContainer>
         <ImageAbsoluteBee
