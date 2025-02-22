@@ -7,7 +7,7 @@ interface PriceCardType {
   url: string;
   alt: string;
   name: string;
-  price: number;
+  price: string;
   weight: string;
   isInSeason?: boolean;
   showDiagonal?: boolean;
