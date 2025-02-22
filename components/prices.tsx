@@ -80,6 +80,7 @@ const BranchesContainer = styled.div`
   margin-right: auto;
   margin-top: 20px;
   align-items: center;
+  justify-content: center;
   @media (min-width: ${devices.desktop}) {
     margin-top: 40px;
   }

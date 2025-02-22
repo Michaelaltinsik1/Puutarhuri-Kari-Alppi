@@ -59,8 +59,11 @@ const ImageStyled = styled(Image)`
   border-radius: 5px;
   @media (min-width: ${devices.laptop}) {
     margin-bottom: 0px;
-    width: 40%;
-    height: auto;
+    margin-right: 40px;
+  }
+  @media (min-width: ${devices.desktop}) {
+    max-width: 50%;
+    margin-bottom: 0px;
     margin-right: 40px;
   }
 `;
