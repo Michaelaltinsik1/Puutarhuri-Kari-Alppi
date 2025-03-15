@@ -75,15 +75,32 @@ const ImageAbsoluteBee = styled(ImageAbsolute)`
   top: -30px;
   right: -16px;
   overflow: hidden;
-  @media (min-width: ${devices.tablet}) {
-    top: -30px;
-    right: -20px;
+  @media (min-width: ${devices.laptop}) {
+    width: 130px;
+    height: 130px;
+    top: -25px;
+    right: -25px;
+  }
+  @media (min-width: ${devices.desktop}) {
+    width: 150px;
+    height: 150px;
+    top: -25px;
+    right: -25px;
   }
 `;
 const ImageAbsoluteGreens = styled(ImageAbsolute)`
   bottom: -25px;
   left: 16px;
   @media (min-width: ${devices.tablet}) {
+    width: 91px;
+    height: 130px;
+    padding: 24px;
+    bottom: -45px;
+    left: -10px;
+  }
+  @media (min-width: ${devices.desktop}) {
+    width: 105px;
+    height: 150px;
     padding: 24px;
     bottom: -45px;
     left: -10px;

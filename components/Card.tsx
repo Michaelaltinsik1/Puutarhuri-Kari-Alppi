@@ -57,7 +57,9 @@ const ImageStyled = styled(Image)`
   height: auto;
   margin-bottom: 20px;
   border-radius: 5px;
+
   @media (min-width: ${devices.laptop}) {
+    width: unset;
     margin-bottom: 0px;
     margin-right: 40px;
   }
@@ -87,7 +89,7 @@ const NavLinkCard = styled(NavLink)`
   &:first-of-type {
     margin-bottom: 16px;
   }
-  @media (min-width: ${devices.laptop}) {
+  @media (min-width: 1490px) {
     &:first-of-type {
       margin-right: 16px;
       margin-bottom: 0px;
@@ -108,8 +110,11 @@ const NavLinkCard = styled(NavLink)`
 
 const LinksContainer = styled.div`
   margin-top: 24px;
-  @media (min-width: ${devices.laptop}) {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1490px) {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 `;
@@ -160,6 +165,9 @@ const SubheadingCardAdditional = styled(Subheading)`
 `;
 
 const AdditionalBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-align: center;
   color: ${colors.textNew};
   font-size: 16px;
