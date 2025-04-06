@@ -57,7 +57,6 @@ const StyledBodyUnderline = styled(StyledBody)`
   font-size: 20px;
   text-decoration: underline;
   text-underline-offset: 4px;
-  //font-weight: bold;
 `;
 const StyledTertiaryHeading = styled(TertiaryHeading)`
   text-align: center;
