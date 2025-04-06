@@ -57,7 +57,7 @@ const StyledBodyUnderline = styled(StyledBody)`
   font-size: 20px;
   text-decoration: underline;
   text-underline-offset: 4px;
-  font-weight: bold;
+  //font-weight: bold;
 `;
 const StyledTertiaryHeading = styled(TertiaryHeading)`
   text-align: center;
@@ -131,7 +131,6 @@ const Reko = ({ headerHeight }: RekoProps) => {
           height={100}
           alt="Kuva ampiaisesta"
         />
-        <StyledTertiaryHeading>Reko</StyledTertiaryHeading>
         <StyledBody>
           Olen mukana lähiruoan myynti- ja jakelumalli REKO:ssa.
         </StyledBody>

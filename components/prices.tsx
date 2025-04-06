@@ -123,8 +123,8 @@ const Prices = ({ headerHeight }: PricesProps) => {
       />
       <Card
         staticImage={TuotteetDummy}
-        alt="Yritit ja vihannesten taimet"
-        title="Yritit ja vihannesten taimet"
+        alt="Yrtit ja vihannesten taimet"
+        title="Yrtit ja vihannesten taimet"
         body={[
           'Kasvatan myös yrttien ja vihannesten taimia jatkokasvatukseen. Voit kasvattaa taimia pihallasi tai parvekkeellasi. Taimien valikoima vaihtelee vuosittain ja saatavuus on rajallinen.',
           'Kesän taimivalikoima ilmestyy sivuillemme aina edeltävän kevään aikana.',
