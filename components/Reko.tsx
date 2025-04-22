@@ -65,6 +65,7 @@ const StyledTertiaryHeading = styled(TertiaryHeading)`
 TertiaryHeading;
 const BoldSpan = styled.span`
   font-weight: bold;
+  color: ${colors.gray_900};
 `;
 
 const ImageAbsolute = styled(Image)`

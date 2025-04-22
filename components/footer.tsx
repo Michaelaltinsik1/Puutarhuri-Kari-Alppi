@@ -97,7 +97,7 @@ const Footer = ({ headerHeight }: FooterProps) => {
     <>
       <DivStyled $headerHeight={headerHeight - 1} id="footer">
         <Container>
-          <FooterHeading>Katso tästa ajo-ohjeet.</FooterHeading>
+          <FooterHeading>Katso tästä ajo-ohjeet.</FooterHeading>
           <NavContainer>
             <a href={googleMapsUrl} target="_blank">
               <picture style={{ display: 'flex' }}>
