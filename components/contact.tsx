@@ -219,6 +219,7 @@ const Contact = ({ headerHeight }: ContactProps) => {
             register={register}
             name="message"
             label="Viesti"
+            placeholder='Kirjoita viesti tähän'
           />
           <Button
             type="submit"

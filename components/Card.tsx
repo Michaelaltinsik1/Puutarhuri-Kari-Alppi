@@ -57,6 +57,7 @@ const ImageStyled = styled(Image)`
   height: auto;
   margin-bottom: 20px;
   border-radius: 5px;
+  flex: 1 1 0%;
 
   @media (min-width: ${devices.laptop}) {
     width: unset;
@@ -167,7 +168,7 @@ const SubheadingCardAdditional = styled(Subheading)`
 const AdditionalBody = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 0%;
   text-align: center;
   color: ${colors.textNew};
   font-size: 16px;
