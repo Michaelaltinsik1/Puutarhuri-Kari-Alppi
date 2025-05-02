@@ -16,6 +16,7 @@ interface ButtonProps {
 }
 
 const ButtonStyled = styled.button<{ $btnType: ButtonType }>`
+  font-family: var(--font-allura);
   font-weight: bold;
   height: 52px;
   cursor: pointer;

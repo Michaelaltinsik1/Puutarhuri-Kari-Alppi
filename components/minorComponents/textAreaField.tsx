@@ -11,6 +11,7 @@ interface TextAreaProps {
   name: string;
 }
 const TextAreaStyled = styled.textarea`
+  font-family: var(--font-allura);
   background-color: ${colors.gray_50};
   height: 200px;
   font-size: 20px;
@@ -20,13 +21,13 @@ const TextAreaStyled = styled.textarea`
   margin-top: 8px;
   @media (min-width: ${devices.laptop}) {
     height: 240px;
-    font-size: 24px;
   }
 `;
 const Label = styled.label`
   display: flex;
   flex-direction: column;
   font-size: 16px;
+  font-family: var(--font-allura);
   color: ${colors.gray_900};
   font-weight: 600;
   &:not(:first-of-type) {

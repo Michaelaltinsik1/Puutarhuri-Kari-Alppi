@@ -11,17 +11,16 @@ interface InputProps {
   errors?: string;
 }
 const Input = styled.input`
+  font-family: var(--font-allura);;
   background-color: ${colors.gray_50};
   font-size: 20px;
   border-radius: 8px;
   padding: 12px 16px;
   border: 1px solid ${colors.gray_900};
   margin-top: 8px;
-  @media (min-width: ${devices.laptop}) {
-    font-size: 20px;
-  }
 `;
 const Label = styled.label`
+  font-family: var(--font-allura);
   display: flex;
   flex-direction: column;
   font-size: 16px;
