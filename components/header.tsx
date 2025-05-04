@@ -154,7 +154,7 @@ const Header = () => {
         {isOpen ? (
           <MenuToggleButton
             onClick={closeMenu}
-            src="/Close.svg"
+            src="/CloseNew.svg"
             alt="Close menu icon"
             width={80}
             height={80}
@@ -187,7 +187,7 @@ const Header = () => {
         <MenuToggleButton
           $isLeftAligned={true}
           onClick={closeMenu}
-          src="/Close.svg"
+          src="/CloseNew.svg"
           alt="Close menu icon"
           width={80}
           height={80}
