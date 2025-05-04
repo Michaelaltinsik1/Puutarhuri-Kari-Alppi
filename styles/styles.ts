@@ -72,7 +72,7 @@ export const Subheading = styled.p`
   }
 `;
 export const Body = styled.p`
-  color: ${colors.textNew};
+  color: ${colors.gray_900};
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0px;

@@ -20,6 +20,8 @@ interface Card {
   additionalInfoTitle?: string;
   additionalInfoBody?: Array<IadditionalInfoBody>;
   shouldCenterMainCardInfo?: boolean;
+  isAdditionalInfoTitleBlack?: boolean;
+  isAdditionalBodyHeaderBlack?: boolean;
 }
 
 const CardContainer = styled.div<{ $isProductCard?: boolean }>`
@@ -70,14 +72,7 @@ const ImageStyled = styled(Image)`
     margin-right: 40px;
   }
 `;
-const BodyCard = styled(Body)<{ $isProductCard?: boolean }>`
-  ${(props) =>
-    props?.$isProductCard
-      ? {
-          color: `${colors.textNew}`,
-        }
-      : { color: `${colors.gray_900}` }}
-`;
+
 const NavLinkCard = styled(NavLink)`
   background-color: ${colors.gray_50};
   color: ${colors.gray_900};
@@ -123,6 +118,7 @@ const LinksContainer = styled.div`
 const TertiaryHeadingCard = styled(Body)`
   font-size: 32px;
   margin-bottom: 24px;
+  color: ${colors.textNew};
   @media (min-width: ${devices.laptop}) {
     font-size: 48px;
     margin-bottom: 32px;
@@ -160,9 +156,15 @@ const AdditionalInformationContainer = styled.div<{ $isProductCard?: boolean }>`
   }
 `;
 
-const SubheadingCardAdditional = styled(Subheading)`
+const SubheadingCardAdditional = styled(Subheading)<{$isAdditionalInfoTitleBlack?: boolean}>`
   margin-bottom: 16px;
   text-align: center;
+  ${(props) =>
+    props?.$isAdditionalInfoTitleBlack
+      ? {
+          color: `${colors.gray_900}`,
+        }
+      : { color: `${colors.textNew}` }}
 `;
 
 const AdditionalBody = styled.div`
@@ -176,11 +178,17 @@ const AdditionalBody = styled.div`
   letter-spacing: 0px;
   margin-bottom: 16px;
 `;
-const AdditionalBodyHeader = styled(AdditionalBody)`
+const AdditionalBodyHeader = styled(AdditionalBody)<{$isAdditionalBodyHeaderBlack?: boolean}>`
   font-size: 20px;
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: bold;
+  ${(props) =>
+    props?.$isAdditionalBodyHeaderBlack
+      ? {
+          color: `${colors.gray_900}`,
+        }
+      : { color: `${colors.textNew}` }}
 `;
 
 const MainCardInfo = styled(AdditionalBody)<{
@@ -202,11 +210,13 @@ const Card = ({
   hasAdditionalInfo = false,
   additionalInfoTitle = '',
   shouldCenterMainCardInfo,
+  isAdditionalInfoTitleBlack = false,
+  isAdditionalBodyHeaderBlack = false
 }: Card) => {
   function getAdditionalBodyTag(bodyText: IadditionalInfoBody) {
     if (bodyText.isBodyHeader) {
       return (
-        <AdditionalBodyHeader key={bodyText.text}>
+        <AdditionalBodyHeader $isAdditionalBodyHeaderBlack={isAdditionalBodyHeaderBlack} key={bodyText.text}>
           {bodyText.text}
         </AdditionalBodyHeader>
       );
@@ -224,9 +234,9 @@ const Card = ({
             </TertiaryHeadingCard>
           )}
           {body.map((paragraph) => (
-            <BodyCard $isProductCard={isProductCard} key={paragraph}>
+            <Body>
               {paragraph}
-            </BodyCard>
+            </Body>
           ))}
           {!isProductCard && (
             <LinksContainer>
@@ -242,8 +252,8 @@ const Card = ({
       </InnerCardContainer>
       {hasAdditionalInfo && (
         <AdditionalInformationContainer $isProductCard={isProductCard}>
-          {additionalInfoTitle && (
-            <SubheadingCardAdditional>
+          {additionalInfoTitle && ( 
+            <SubheadingCardAdditional $isAdditionalInfoTitleBlack={isAdditionalInfoTitleBlack}>
               {additionalInfoTitle}
             </SubheadingCardAdditional>
           )}

@@ -7,7 +7,7 @@ import { devices } from '@/utils/devices';
 import mapMobile from '../public/MapMobile.jpg';
 import { Subheading } from '@/styles/styles';
 import SocialMedia from './SocialMedia';
-import WaysOfWorking from './WaysOfWorking';
+import Mustikka from '../public/mustikka_1.png';
 interface FooterProps {
   headerHeight: number;
 }
@@ -88,6 +88,15 @@ const ImageStyled = styled(Image)`
     margin-right: 32px;
   }
 `;
+const ImageContainer = styled.div`
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: ${devices.tablet}) {
+    justify-content: center;
+  }
+`;
 
 const Footer = ({ headerHeight }: FooterProps) => {
   const destinationLat = 61.574391246702795;
@@ -109,11 +118,13 @@ const Footer = ({ headerHeight }: FooterProps) => {
           </NavContainer>
         </Container>
         <SocialMedia />
+        <ImageContainer>
+          <Image src={Mustikka} width={100} height={100} alt="Mustikka" />
+        </ImageContainer>
         <CopyRight>
           &copy; Puutarhuri Kari Alppi. Kaikki oikeudet pidätetään.
         </CopyRight>
       </DivStyled>
-      <WaysOfWorking />
     </>
   );
 };

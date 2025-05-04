@@ -98,9 +98,16 @@ const ImageAbsoluteGreens = styled(ImageAbsolute)`
     bottom: -45px;
     left: -10px;
   }
-  @media (min-width: ${devices.desktop}) {
+  @media (min-width: ${devices.laptop}) {
     width: 105px;
     height: 150px;
+    padding: 24px;
+    bottom: -45px;
+    left: -10px;
+  }
+  @media (min-width: ${devices.desktop}) {
+    width: 122px;
+    height: 175px;
     padding: 24px;
     bottom: -45px;
     left: -10px;

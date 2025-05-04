@@ -132,6 +132,8 @@ const Prices = ({ headerHeight }: PricesProps) => {
         isProductCard={true}
         hasAdditionalInfo={true}
         additionalInfoTitle="Kesän 2025 taimivalikoima:"
+        isAdditionalInfoTitleBlack={true}
+        isAdditionalBodyHeaderBlack={true}
         additionalInfoBody={[
           { isBodyHeader: true, text: 'Vihannesten taimet:' },
           {
