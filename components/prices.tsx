@@ -9,6 +9,7 @@ import Card from './Card';
 import yrityksestä from '../public/Yrityksestä.jpg';
 import TuotteetMustikka from '../public/TuotteetMustikka.jpg';
 import TuotteetParsa from '../public/TuotteetParsa.jpg';
+import TuotteetYrit from '../public/TuotteetYrtit.jpg';
 import TuotteetDummy from '../public/TuotteetDummy.jpg';
 import branchesLeft from '../public/branches-left.png';
 import branchesRight from '../public/branches-right.png';
@@ -122,7 +123,7 @@ const Prices = ({ headerHeight }: PricesProps) => {
         isProductCard={true}
       />
       <Card
-        staticImage={TuotteetDummy}
+        staticImage={TuotteetYrit}
         alt="Yrtit ja vihannesten taimet"
         title="Yrtit ja vihannesten taimet"
         body={[
