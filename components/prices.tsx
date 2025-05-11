@@ -143,7 +143,7 @@ const Prices = ({ headerHeight }: PricesProps) => {
           { isBodyHeader: true, text: 'Yrtit: ' },
           {
             isBodyHeader: false,
-            text: 'basilika, timjani, rosmariini, laventeli, oregano, kurkkuyrtti, salvia, sitruunamelissa, viinisuolaheinä, korianteri, rucola, kiinankaali, stevia',
+            text: 'basilika, timjami, rosmariini, laventeli, oregano, kurkkuyrtti, salvia, sitruunamelissa, viinisuolaheinä, korianteri, rucola, kiinankaali, stevia',
           },
         ]}
       />

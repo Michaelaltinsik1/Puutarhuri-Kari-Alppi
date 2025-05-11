@@ -234,7 +234,7 @@ const Card = ({
             </TertiaryHeadingCard>
           )}
           {body.map((paragraph) => (
-            <Body>
+            <Body key={paragraph}>
               {paragraph}
             </Body>
           ))}
